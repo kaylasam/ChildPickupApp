@@ -21,7 +21,7 @@ public class ParentsRepository implements ChildrenDataSource {
 
 
     private ParentsRepository(AppExecutors executors, Context context){
-        childrenDao = ChildrenDatabase.getInstance(context).getChildrenDao();
+        parentsDao = ParentsDatabase.getInstance(context).getChildrenDao();
         mAppExecutors = executors;
     }
 
