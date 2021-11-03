@@ -14,7 +14,7 @@ import util.AppExecutors;
 public class ParentsRepository implements ChildrenDataSource {
 
     public static volatile ParentsRepository INSTANCE;
-    ChildrenDao childrenDao;
+    ParentsDao parentsDao;
     AppExecutors mAppExecutors;
     private Context mContext;
 
