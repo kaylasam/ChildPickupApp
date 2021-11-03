@@ -43,7 +43,7 @@ public class ParentsRepository implements ChildrenDataSource {
     }
 
     @Override
-    public void getChildren(@NonNull LoadChildrenCallback callback) {
+    public void getParents(@NonNull LoadChildrenCallback callback) {
         Log.d("REPOSITORY","Loading...");
         Runnable runnable = new Runnable(){
             @Override
@@ -55,7 +55,7 @@ public class ParentsRepository implements ChildrenDataSource {
 //                        CommentedPhoto.COMMENTEDPHOTO_LAT,
 //                        CommentedPhoto.COMMENTEDPHOTO_LONG};
                 //final Cursor c = mContext.getContentResolver().query(Uri.parse("content://" + MessageProvider.AUTHORITY + "/" + MessageProvider.MESSAGE_TABLE_NAME), projection, null, null, null);
-                final Cursor c = childrenDao.findAll();
+                final Cursor c = parentsDao.findAll();
                 final List<Children> children = new ArrayList<Children>(0);
                 mAppExecutors.mainThread().execute(new Runnable() {
                     @Override
