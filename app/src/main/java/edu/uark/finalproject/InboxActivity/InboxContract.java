@@ -2,9 +2,6 @@ package edu.uark.finalproject.InboxActivity;
 
 import java.util.List;
 
-import edu.uark.finalproject.data.Message;
-import edu.uark.finalproject.data.MessagesRepository;
-
 public interface InboxContract {
 
     interface View{

@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Vehicles {
 
-    public static final String VEHICLE_ID = "id"
+    public static final String VEHICLE_ID = "id";
     public static final String VEHICLE_MAKE = "make";
     public static final String VEHICLE_MODEL = "model";
     public static final String VEHICLE_COLOR = "color";

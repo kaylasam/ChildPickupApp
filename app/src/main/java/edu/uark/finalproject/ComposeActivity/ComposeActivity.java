@@ -10,9 +10,6 @@ import android.widget.TextView;
 
 import edu.uark.finalproject.Injection;
 import edu.uark.finalproject.R;
-import edu.uark.finalproject.data.Message;
-import edu.uark.finalproject.data.MessageDataSource;
-import edu.uark.finalproject.data.MessagesRepository;
 import util.AppExecutors;
 
 public class ComposeActivity extends AppCompatActivity {

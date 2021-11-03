@@ -5,10 +5,6 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.uark.finalproject.data.Message;
-import edu.uark.finalproject.data.MessageDataSource;
-import edu.uark.finalproject.data.MessagesRepository;
-
 public class InboxPresenter implements InboxContract.Presenter{
 
     private InboxContract.View mView;

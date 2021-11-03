@@ -12,7 +12,6 @@ import java.util.List;
 
 import edu.uark.finalproject.ComposeActivity.ComposeActivity;
 import edu.uark.finalproject.R;
-import edu.uark.finalproject.data.Message;
 
 public class InboxViewAdapter extends RecyclerView.Adapter<InboxViewAdapter.ViewHolder> {
 

@@ -2,8 +2,6 @@ package edu.uark.finalproject.data.dummydata;
 
 import java.util.Random;
 
-import edu.uark.finalproject.data.Message;
-
 public class Post {
 
     private int userId;

@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Parents {
 
-    public static final String PARENT_ID = "id"
+    public static final String PARENT_ID = "id";
     public static final String PARENT_NAME = "name";
     public static final String PARENT_PHONE = "phone";
     public static final String PARENT_EMAIL = "email";
