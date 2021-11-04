@@ -8,7 +8,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import edu.uark.finalproject.BuildConfig;
-import edu.uark.finalproject.InboxActivity.InboxActivity;
+import edu.uark.finalproject.DashboardActivity.DashboardActivity;
 
 
 public class LoginScreen extends AppCompatActivity {
@@ -19,7 +19,7 @@ public class LoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent inboxActivityIntent = new Intent();
-        inboxActivityIntent.setClass(getApplicationContext(), InboxActivity.class);
+        inboxActivityIntent.setClass(getApplicationContext(), DashboardActivity.class);
         startActivity(inboxActivityIntent);
         finish();
 

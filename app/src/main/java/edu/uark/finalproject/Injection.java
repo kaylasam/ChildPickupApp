@@ -4,10 +4,11 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 
+import edu.uark.finalproject.data.ChildPickupRepository;
 import util.AppExecutors;
 
 public class Injection {
-    public static MessagesRepository provideMessagesRepository(AppExecutors executors,@NonNull Context context) {
-        return MessagesRepository.getInstance(executors,context);
+    public static ChildPickupRepository provideDataRepository(AppExecutors executors, @NonNull Context context) {
+        return ChildPickupRepository.getInstance(executors,context);
     }
 }

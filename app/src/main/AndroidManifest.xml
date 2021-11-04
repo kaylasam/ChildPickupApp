@@ -12,11 +12,6 @@
         <activity
             android:name=".DashboardActivity.DashboardActivity"
             android:exported="true" />
-        <activity
-            android:name=".MenuActivity.MenuActivity"
-            android:exported="true"
-            android:label="@string/title_activity_menu"
-            android:theme="@style/Theme.BestEmailClient.NoActionBar" />
         <!--
                  The API key for Google Maps-based APIs is defined as a string resource.
                  (See the file "res/values/google_maps_api.xml").
