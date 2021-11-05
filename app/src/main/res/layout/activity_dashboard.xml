@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="PARENT USER FIRSTNAME LASTNAME"
+                android:text="@string/parent_name_tv_text"
                 android:textAllCaps="true"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="16sp"
@@ -112,7 +112,6 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/ChildProfileCard"
@@ -277,7 +276,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/mapViewCard"
+            android:id="@+id/MapViewCard"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="8dp"
@@ -323,7 +322,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/reviewPickupsCard"
+            android:id="@+id/ReviewPickupsCard"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="8dp"
