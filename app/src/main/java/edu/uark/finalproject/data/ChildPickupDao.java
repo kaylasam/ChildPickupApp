@@ -24,7 +24,7 @@ public interface ChildPickupDao {
      * select all Children
      * @return A {@link Cursor} of all children in the table
      */
-    @Query("SELECT * FROM ChildPickup.Children")
+    @Query("SELECT * FROM Children")
     Cursor findAllChildren();
 
     /**
@@ -53,7 +53,7 @@ public interface ChildPickupDao {
      * select all Parents
      * @return A {@link Cursor} of all parents in the table
      */
-    @Query("SELECT * FROM ChildPickup.Parents")
+    @Query("SELECT * FROM Parents")
     Cursor findAllParents();
 
     /**
@@ -89,7 +89,7 @@ public interface ChildPickupDao {
      * Delete a Vehicle by ID
      * @return A number of Vehicles deleted
      */
-    @Query("DELETE FROM ChildPickup.Vehicles WHERE id = :id ")
+    @Query("DELETE FROM Vehicles WHERE id = :id ")
     int deleteVehicle(long id);
 
     /**

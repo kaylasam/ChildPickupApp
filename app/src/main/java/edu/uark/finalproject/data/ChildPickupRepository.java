@@ -263,7 +263,7 @@ public class ChildPickupRepository implements ChildPickupDataSource {
             public void run() {
                 ContentValues myCV = new ContentValues();
                 myCV.put(Parents.PARENT_ID,parent.getId());
-                myCV.put(Parents.PARENT_NAME,parent.getName(););
+                myCV.put(Parents.PARENT_NAME,parent.getName());
                 myCV.put(Parents.PARENT_EMAIL,parent.getEmail());
                 myCV.put(Parents.PARENT_PHONE,parent.getPhone());
                 final int numUpdated = childPickupDao.updateParent(parent);

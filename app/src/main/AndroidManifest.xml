@@ -11,7 +11,13 @@
         android:theme="@style/Theme.BestEmailClient">
         <activity
             android:name=".DashboardActivity.DashboardActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!--
                  The API key for Google Maps-based APIs is defined as a string resource.
                  (See the file "res/values/google_maps_api.xml").
@@ -20,33 +26,13 @@
                  sign the APK for publishing.
                  You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-        <activity
-            android:name=".LoginScreen"
-            android:exported="true"
-            android:label="@string/title_activity_login_screen"
-            android:theme="@style/Theme.BestEmailClient.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".ComposeActivity.ComposeActivity"
-            android:exported="true" />
-        <activity
-            android:name=".InboxActivity.InboxActivity"
-            android:exported="true" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBbkqrCM0kzK8EdAYTFauThxpqsQNT3AWs" />
 
-        <provider
-            android:name=".data.MessageProvider"
-            android:authorities="edu.uark.finalproject.data"
-            android:enabled="true"
-            android:exported="true" />
+
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
