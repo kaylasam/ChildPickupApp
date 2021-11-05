@@ -1,6 +1,4 @@
-package edu.uark.finalproject.ParentProfile;
-
-import java.util.List;
+package edu.uark.finalproject.ParentProfileActivity;
 
 public interface ParentContract {
 

@@ -3,10 +3,10 @@ package edu.uark.finalproject.DashboardActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import edu.uark.finalproject.ChildProfile.ChildProfileActivity;
-import edu.uark.finalproject.ParentProfile.ParentProfileActivity;
+import edu.uark.finalproject.ChildProfileActivity.ChildProfileActivity;
+import edu.uark.finalproject.ParentProfileActivity.ParentProfileActivity;
 import edu.uark.finalproject.R;
-import edu.uark.finalproject.VehicleProfile.VehicleProfileActivity;
+import edu.uark.finalproject.VehicleProfileActivity.VehicleProfileActivity;
 
 import android.content.Intent;
 import android.os.Bundle;

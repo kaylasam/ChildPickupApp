@@ -1,4 +1,4 @@
-package edu.uark.finalproject.VehicleProfile;
+package edu.uark.finalproject.VehicleProfileActivity;
 
 public class VehiclePresenter implements VehicleContract.Presenter{
 }

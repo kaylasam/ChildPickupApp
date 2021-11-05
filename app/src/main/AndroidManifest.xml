@@ -20,16 +20,21 @@
         </activity>
 
         <activity
-            android:name=".ParentProfile.ParentProfileActivity"
+            android:name=".ParentProfileActivity.ParentProfileActivity"
             android:exported="true" />
 
         <activity
-            android:name=".ChildProfile.ChildProfileActivity"
+            android:name=".ChildProfileActivity.ChildProfileActivity"
             android:exported="true" />
 
         <activity
-            android:name=".VehicleProfile.VehicleProfileActivity"
+            android:name=".VehicleProfileActivity.VehicleProfileActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".SchedulePickupActivity.SchedulePickupActivity"
+            android:exported="true" >
+        </activity>
         <!--
                  The API key for Google Maps-based APIs is defined as a string resource.
                  (See the file "res/values/google_maps_api.xml").

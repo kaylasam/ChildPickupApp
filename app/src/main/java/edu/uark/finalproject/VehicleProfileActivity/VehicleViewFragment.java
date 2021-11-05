@@ -1,4 +1,4 @@
-package edu.uark.finalproject.VehicleProfile;
+package edu.uark.finalproject.VehicleProfileActivity;
 
 import androidx.fragment.app.Fragment;
 

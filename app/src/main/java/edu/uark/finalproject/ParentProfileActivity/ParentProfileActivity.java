@@ -1,8 +1,7 @@
-package edu.uark.finalproject.ParentProfile;
+package edu.uark.finalproject.ParentProfileActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 

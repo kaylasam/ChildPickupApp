@@ -1,4 +1,4 @@
-package edu.uark.finalproject.ParentProfile;
+package edu.uark.finalproject.ParentProfileActivity;
 
 public class ParentPresenter implements ParentContract.Presenter{
 }

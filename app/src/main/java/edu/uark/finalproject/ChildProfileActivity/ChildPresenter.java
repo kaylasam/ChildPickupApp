@@ -1,4 +1,4 @@
-package edu.uark.finalproject.ChildProfile;
+package edu.uark.finalproject.ChildProfileActivity;
 
 public class ChildPresenter implements ChildContract.Presenter{
 }

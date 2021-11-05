@@ -6,7 +6,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentChildProfileView"
-        android:name="edu.uark.finalproject.ChildProfile.ChildViewFragment"
+        android:name="edu.uark.finalproject.ChildProfileActivity.ChildViewFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
