@@ -6,7 +6,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentVehicleView"
-        android:name="edu.uark.finalproject.InboxActivity.InboxViewFragment"
+        android:name="edu.uark.finalproject.VehicleProfile.VehicleViewFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

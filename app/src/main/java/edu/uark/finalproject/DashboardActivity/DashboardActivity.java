@@ -3,8 +3,12 @@ package edu.uark.finalproject.DashboardActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import edu.uark.finalproject.ChildProfile.ChildProfileActivity;
+import edu.uark.finalproject.ParentProfile.ParentProfileActivity;
 import edu.uark.finalproject.R;
+import edu.uark.finalproject.VehicleProfile.VehicleProfileActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -41,18 +45,26 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         switch (view.getId()) {
             case R.id.ParentProfileCard:
                 Toast.makeText(this, "ParentProfileCard", Toast.LENGTH_SHORT).show();
+                Intent parentAct = new Intent(this, ParentProfileActivity.class);
+                startActivity(parentAct);
                 break;
             case R.id.ChildProfileCard:
                 Toast.makeText(this, "ChildProfileCard", Toast.LENGTH_SHORT).show();
+                Intent childAct = new Intent(this, ChildProfileActivity.class);
+                startActivity(childAct);
                 break;
             case R.id.VehicleProfileCard:
                 Toast.makeText(this, "VehicleProfileCard", Toast.LENGTH_SHORT).show();
+                Intent vehicleAct = new Intent(this, VehicleProfileActivity.class);
+                startActivity(vehicleAct);
                 break;
             case R.id.SchedulePickupCard:
                 Toast.makeText(this, "SchedulePickupCard", Toast.LENGTH_SHORT).show();
+                //setContentView(R.layout.schedule_pickup);
                 break;
             case R.id.MapViewCard:
                 Toast.makeText(this, "MapViewCard", Toast.LENGTH_SHORT).show();
+                //setContentView(R.layout.activity_maps);
                 break;
             case R.id.ReviewPickupsCard:
                 Toast.makeText(this, "ReviewPickupsCard", Toast.LENGTH_SHORT).show();
