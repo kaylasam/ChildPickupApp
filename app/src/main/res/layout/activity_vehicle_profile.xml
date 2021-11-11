@@ -5,8 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentVehicleView"
-        android:name="edu.uark.finalproject.VehicleProfileActivity.VehicleViewFragment"
+        android:id="@+id/fragmentVehicleProfileView"
+        android:name="edu.uark.finalproject.VehicleProfileActivity.VehicleProfileViewFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

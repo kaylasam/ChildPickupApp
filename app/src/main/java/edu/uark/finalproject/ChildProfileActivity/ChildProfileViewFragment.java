@@ -1,5 +1,6 @@
 package edu.uark.finalproject.ChildProfileActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import edu.uark.finalproject.DashboardActivity.DashboardActivity;
 import edu.uark.finalproject.R;
 
 public class ChildProfileViewFragment extends Fragment implements ChildProfileContract.View{
@@ -48,8 +50,8 @@ public class ChildProfileViewFragment extends Fragment implements ChildProfileCo
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //mPresenter.sendClicked();
-                Log.d("ChildProfileViewFragment: ", "back button clicked");
+                Intent intent = new Intent(view.getContext(), DashboardActivity.class);
+                startActivity(intent);
             }
         });
         rvChildProfile = root.findViewById(R.id.rvChildren);
