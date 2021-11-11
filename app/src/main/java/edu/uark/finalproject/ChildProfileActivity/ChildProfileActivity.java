@@ -29,6 +29,12 @@ public class ChildProfileActivity extends AppCompatActivity {
         checkFirstRun();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mPresenter.start();
+    }
+
     private void checkFirstRun() {
 
         final String PREFS_NAME = "MyPrefsFile";

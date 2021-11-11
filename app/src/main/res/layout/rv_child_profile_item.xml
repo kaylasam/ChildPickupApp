@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
-        android:id="@+id/vehicleImage"
+        android:id="@+id/childImage"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="32dp"
@@ -16,33 +16,33 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/vehicleMake"
+        android:id="@+id/tvChildName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/child_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vehicleImage" />
+        app:layout_constraintTop_toBottomOf="@+id/childImage" />
 
     <TextView
-        android:id="@+id/vehicleModel"
+        android:id="@+id/tvChildAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/child_age"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vehicleMake" />
+        app:layout_constraintTop_toBottomOf="@+id/tvChildName" />
 
     <TextView
-        android:id="@+id/vehicleColor"
+        android:id="@+id/tvChildGrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/child_grade"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vehicleModel" />
+        app:layout_constraintTop_toBottomOf="@+id/tvChildAge" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
