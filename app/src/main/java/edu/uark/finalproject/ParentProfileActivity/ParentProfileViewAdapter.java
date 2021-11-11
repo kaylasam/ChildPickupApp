@@ -1,5 +1,6 @@
 package edu.uark.finalproject.ParentProfileActivity;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -23,14 +24,20 @@ public class ParentProfileViewAdapter extends RecyclerView.Adapter<ParentProfile
         localDataSet = parents;
     }
 
-    @NonNull
+    // Create new views (invoked by the layout manager)
     @Override
-    public ParentProfileViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+        // Create a new view, which defines the UI of the list item
+        View view = LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.rv_parent_profile_item, viewGroup, false);
+
+        return new ViewHolder(view);
     }
 
+    // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(@NonNull ParentProfileViewAdapter.ViewHolder holder, int position) {
+        holder.itemView.setTag(String.valueOf(localDataSet.get(position).getId()));
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         String parentName = localDataSet.get(position).getName();
@@ -43,7 +50,7 @@ public class ParentProfileViewAdapter extends RecyclerView.Adapter<ParentProfile
 
     @Override
     public int getItemCount() {
-        return 0;
+        return localDataSet.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
@@ -51,7 +58,7 @@ public class ParentProfileViewAdapter extends RecyclerView.Adapter<ParentProfile
         private final TextView tvParentEmail;
         private final TextView tvParentNumber;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
             tvParentEmail = (TextView) itemView.findViewById(R.id.tvParentEmail);
             tvParentName = (TextView) itemView.findViewById(R.id.tvParentName);

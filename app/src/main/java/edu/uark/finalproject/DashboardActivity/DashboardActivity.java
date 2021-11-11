@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import edu.uark.finalproject.ChildProfileActivity.ChildProfileActivity;
 import edu.uark.finalproject.ParentProfileActivity.ParentProfileActivity;
 import edu.uark.finalproject.R;
+import edu.uark.finalproject.SchedulePickupActivity.SchedulePickupActivity;
 import edu.uark.finalproject.VehicleProfileActivity.VehicleProfileActivity;
 
 import android.content.Intent;
@@ -56,8 +57,8 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 startActivity(vehicleAct);
                 break;
             case R.id.SchedulePickupCard:
-                Toast.makeText(this, "SchedulePickupCard", Toast.LENGTH_SHORT).show();
-                //setContentView(R.layout.schedule_pickup);
+                Intent schedulePickupIntent = new Intent(this, SchedulePickupActivity.class);
+                startActivity(schedulePickupIntent);
                 break;
             case R.id.MapViewCard:
                 Toast.makeText(this, "MapViewCard", Toast.LENGTH_SHORT).show();
