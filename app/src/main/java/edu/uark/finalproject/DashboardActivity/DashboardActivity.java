@@ -62,7 +62,6 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.MapViewCard:
                 Toast.makeText(this, "MapViewCard", Toast.LENGTH_SHORT).show();
-                //setContentView(R.layout.activity_maps);
                 break;
             case R.id.ReviewPickupsCard:
                 Toast.makeText(this, "ReviewPickupsCard", Toast.LENGTH_SHORT).show();
