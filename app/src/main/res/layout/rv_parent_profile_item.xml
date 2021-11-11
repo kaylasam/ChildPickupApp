@@ -17,7 +17,7 @@
         tools:srcCompat="@tools:sample/avatars[1]" />
 
     <TextView
-        android:id="@+id/tvChildName"
+        android:id="@+id/tvParentName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -27,23 +27,23 @@
         app:layout_constraintTop_toBottomOf="@+id/parentImage" />
 
     <TextView
-        android:id="@+id/tvChildAge"
+        android:id="@+id/tvParentPhoneNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/parent_phone_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvChildName" />
+        app:layout_constraintTop_toBottomOf="@+id/tvParentName" />
 
     <TextView
-        android:id="@+id/parentEmail"
+        android:id="@+id/tvParentEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/parent_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvChildAge" />
+        app:layout_constraintTop_toBottomOf="@+id/tvParentPhoneNumber" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

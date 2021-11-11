@@ -44,17 +44,14 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ParentProfileCard:
-                Toast.makeText(this, "ParentProfileCard", Toast.LENGTH_SHORT).show();
                 Intent parentAct = new Intent(this, ParentProfileActivity.class);
                 startActivity(parentAct);
                 break;
             case R.id.ChildProfileCard:
-                Toast.makeText(this, "ChildProfileCard", Toast.LENGTH_SHORT).show();
                 Intent childAct = new Intent(this, ChildProfileActivity.class);
                 startActivity(childAct);
                 break;
             case R.id.VehicleProfileCard:
-                Toast.makeText(this, "VehicleProfileCard", Toast.LENGTH_SHORT).show();
                 Intent vehicleAct = new Intent(this, VehicleProfileActivity.class);
                 startActivity(vehicleAct);
                 break;
