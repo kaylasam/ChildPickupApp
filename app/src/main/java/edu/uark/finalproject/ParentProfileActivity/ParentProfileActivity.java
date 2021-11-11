@@ -12,7 +12,7 @@ public class ParentProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.parent_profile);
+        setContentView(R.layout.activity_parent_profile);
 
     }
 
