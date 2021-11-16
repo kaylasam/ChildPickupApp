@@ -448,10 +448,10 @@ public class ChildPickupRepository implements ChildPickupDataSource {
         mAppExecutors.diskIO().execute(runnable);
     }
 
-    // PICKUP REPOSITORY
+    // REVIEW PICKUP REPOSITORY
 
     @Override
-    public void getPickups(@NonNull LoadPickupsCallback callback) {
+    public void getReviewPickups(@NonNull LoadReviewPickupsCallback callback) {
         Log.d("REPOSITORY","Loading...");
         Runnable runnable = new Runnable(){
             @Override
@@ -483,7 +483,7 @@ public class ChildPickupRepository implements ChildPickupDataSource {
                                 pickups.add(pickup);
                             }
                             c.close();
-                            callback.onPickupsLoaded(pickups);
+                            callback.onReviewPickupsLoaded(pickups);
                         }
                     }
                 });
@@ -493,7 +493,7 @@ public class ChildPickupRepository implements ChildPickupDataSource {
     }
 
     @Override
-    public void getPickup(@NonNull Integer PickupId, @NonNull GetPickupsCallback callback) {
+    public void getReviewPickup(@NonNull Integer PickupId, @NonNull GetReviewPickupsCallback callback) {
         Log.d("REPOSITORY","GetPickup");
         Runnable runnable = new Runnable(){
             @Override
@@ -515,7 +515,7 @@ public class ChildPickupRepository implements ChildPickupDataSource {
                                 pickup.setTime(c.getString(c.getColumnIndex(ReviewPickups.PICKUP_TIME)));
                             }
                             c.close();
-                            callback.onPickupsLoaded(pickup);
+                            callback.onReviewPickupsLoaded(pickup);
                         }
                     }
                 });
@@ -526,7 +526,7 @@ public class ChildPickupRepository implements ChildPickupDataSource {
     }
 
     @Override
-    public void savePickup(@NonNull ReviewPickups pickup) {
+    public void saveReviewPickup(@NonNull ReviewPickups pickup) {
         Log.d("REPOSITORY","SaveToDoItem");
         Runnable runnable = new Runnable(){
             @Override
@@ -545,7 +545,7 @@ public class ChildPickupRepository implements ChildPickupDataSource {
     }
 
     @Override
-    public void createPickup(@NonNull ReviewPickups pickup, @NonNull CreatePickupCallback callback) {
+    public void createReviewPickup(@NonNull ReviewPickups pickup, @NonNull CreateReviewPickupCallback callback) {
         Log.d("REPOSITORY","Deleting...");
         Runnable runnable = new Runnable() {
             @Override
@@ -554,7 +554,7 @@ public class ChildPickupRepository implements ChildPickupDataSource {
                 mAppExecutors.mainThread().execute(new Runnable(){
                     @Override
                     public void run() {
-                        callback.onPickupCreated((int)id);
+                        callback.onReviewPickupCreated((int)id);
                     }
                 });
             }
@@ -564,17 +564,17 @@ public class ChildPickupRepository implements ChildPickupDataSource {
     }
 
     @Override
-    public void deletePickup(@NonNull Integer id, @NonNull DeletePickupCallback callback) {
+    public void deleteReviewPickup(@NonNull Integer id, @NonNull DeleteReviewPickupCallback callback) {
         Log.d("REPOSITORY","Deleting...");
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 try {
                     int count = childPickupDao.deletePickup(id);
-                    callback.onPickupDeleted();
+                    callback.onReviewPickupDeleted();
                 }catch (Exception ex){
                     Log.e("REPOSITORY",ex.toString());
-                    callback.onPickupDeleteFailure();
+                    callback.onReviewPickupDeleteFailure();
                 }
             }
         };

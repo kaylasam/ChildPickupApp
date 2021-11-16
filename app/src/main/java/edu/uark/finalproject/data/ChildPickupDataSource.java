@@ -227,17 +227,17 @@ public interface ChildPickupDataSource {
      * Example of how to implement callback functions depending on the result of functions in interfaces
      * Currently, onDataNotAvailable is not implemented
      */
-    interface LoadPickupsCallback {
+    interface LoadReviewPickupsCallback {
 
-        void onPickupsLoaded(List<ReviewPickups> pickups);
+        void onReviewPickupsLoaded(List<ReviewPickups> pickups);
         void onDataNotAvailable();
     }
 
     /**
      * GetPhotoCallback interface
      */
-    interface GetPickupsCallback {
-        void onPickupsLoaded(ReviewPickups pickups);
+    interface GetReviewPickupsCallback {
+        void onReviewPickupsLoaded(ReviewPickups pickups);
         void onDataNotAvailable();
     }
 
@@ -245,52 +245,52 @@ public interface ChildPickupDataSource {
      * CreatePhotoCallback interface
      * Return the id in createSuccessful
      */
-    interface CreatePickupCallback{
-        void onPickupCreated(int id);
-        void onPickupCreateFail();
+    interface CreateReviewPickupCallback{
+        void onReviewPickupCreated(int id);
+        void onReviewPickupCreateFail();
     }
 
     /**
      * DeletePhotoCallback interface
      * Identify when a deletion is successful
      */
-    interface DeletePickupCallback{
-        void onPickupDeleted();
-        void onPickupDeleteFailure();
+    interface DeleteReviewPickupCallback{
+        void onReviewPickupDeleted();
+        void onReviewPickupDeleteFailure();
     }
 
     /**
      * getPhotos loads all Photos, calls either success or failure callback
      * @param callback - Callback function
      */
-    void getPickups(@NonNull LoadPickupsCallback callback);
+    void getReviewPickups(@NonNull LoadReviewPickupsCallback callback);
 
     /**
      * getPhoto - Get a single Photo
      * @param PhotoId - String of the current PhotoID to be retrieved
      * @param callback - Callback function
      */
-    void getPickup(@NonNull Integer PickupId, @NonNull GetPickupsCallback callback);
+    void getReviewPickup(@NonNull Integer PickupId, @NonNull GetReviewPickupsCallback callback);
 
     /**
      * SavePhoto saves a CommentedPhoto to the database
      * @param photo - Photo to be updated
      */
-    void savePickup(@NonNull final ReviewPickups pickup);
+    void saveReviewPickup(@NonNull final ReviewPickups pickup);
 
     /**
      * CreatePhoto adds a CommentedPhoto to the database
      * @param photo - Photo to be added
      * @param callback - Callback function after thread completion
      */
-    void createPickup(@NonNull ReviewPickups pickup, @NonNull CreatePickupCallback callback);
+    void createReviewPickup(@NonNull ReviewPickups pickup, @NonNull CreateReviewPickupCallback callback);
 
 
     /**
      * deletePhoto deletes a CommentedPhoto from the database
      * @param id
      */
-    void deletePickup(@NonNull Integer id, @NonNull DeletePickupCallback callback);
+    void deleteReviewPickup(@NonNull Integer id, @NonNull DeleteReviewPickupCallback callback);
 }
 
 
