@@ -11,7 +11,8 @@ import androidx.room.RoomDatabase;
         entities = {
                 Children.class,
                 Parents.class,
-                Vehicles.class
+                Vehicles.class,
+                ReviewPickups.class
         },
         version = 1,
         exportSchema = false

@@ -219,6 +219,78 @@ public interface ChildPickupDataSource {
      * @param id
      */
     void deleteVehicle(@NonNull Integer id, @NonNull DeleteVehicleCallback callback);
+
+    // REVIEW PICKUP DATA SOURCE
+
+    /**
+     * LoadMessagesCallback interface
+     * Example of how to implement callback functions depending on the result of functions in interfaces
+     * Currently, onDataNotAvailable is not implemented
+     */
+    interface LoadPickupsCallback {
+
+        void onPickupsLoaded(List<ReviewPickups> pickups);
+        void onDataNotAvailable();
+    }
+
+    /**
+     * GetPhotoCallback interface
+     */
+    interface GetPickupsCallback {
+        void onPickupsLoaded(ReviewPickups pickups);
+        void onDataNotAvailable();
+    }
+
+    /**
+     * CreatePhotoCallback interface
+     * Return the id in createSuccessful
+     */
+    interface CreatePickupCallback{
+        void onPickupCreated(int id);
+        void onPickupCreateFail();
+    }
+
+    /**
+     * DeletePhotoCallback interface
+     * Identify when a deletion is successful
+     */
+    interface DeletePickupCallback{
+        void onPickupDeleted();
+        void onPickupDeleteFailure();
+    }
+
+    /**
+     * getPhotos loads all Photos, calls either success or failure callback
+     * @param callback - Callback function
+     */
+    void getPickups(@NonNull LoadPickupsCallback callback);
+
+    /**
+     * getPhoto - Get a single Photo
+     * @param PhotoId - String of the current PhotoID to be retrieved
+     * @param callback - Callback function
+     */
+    void getPickup(@NonNull Integer PickupId, @NonNull GetPickupsCallback callback);
+
+    /**
+     * SavePhoto saves a CommentedPhoto to the database
+     * @param photo - Photo to be updated
+     */
+    void savePickup(@NonNull final ReviewPickups pickup);
+
+    /**
+     * CreatePhoto adds a CommentedPhoto to the database
+     * @param photo - Photo to be added
+     * @param callback - Callback function after thread completion
+     */
+    void createPickup(@NonNull ReviewPickups pickup, @NonNull CreatePickupCallback callback);
+
+
+    /**
+     * deletePhoto deletes a CommentedPhoto from the database
+     * @param id
+     */
+    void deletePickup(@NonNull Integer id, @NonNull DeletePickupCallback callback);
 }
 
 

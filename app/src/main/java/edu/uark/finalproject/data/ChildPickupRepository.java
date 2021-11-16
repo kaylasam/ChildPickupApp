@@ -447,4 +447,137 @@ public class ChildPickupRepository implements ChildPickupDataSource {
         };
         mAppExecutors.diskIO().execute(runnable);
     }
+
+    // PICKUP REPOSITORY
+
+    @Override
+    public void getPickups(@NonNull LoadPickupsCallback callback) {
+        Log.d("REPOSITORY","Loading...");
+        Runnable runnable = new Runnable(){
+            @Override
+            public void run() {
+//                String[] projection = {
+//                        CommentedPhoto.COMMENTEDPHOTO_ID,
+//                        CommentedPhoto.COMMENTEDPHOTO_COMMENT,
+//                        CommentedPhoto.COMMENTEDPHOTO_FNAME,
+//                        CommentedPhoto.COMMENTEDPHOTO_LAT,
+//                        CommentedPhoto.COMMENTEDPHOTO_LONG};
+                //final Cursor c = mContext.getContentResolver().query(Uri.parse("content://" + MessageProvider.AUTHORITY + "/" + MessageProvider.MESSAGE_TABLE_NAME), projection, null, null, null);
+                final Cursor c = childPickupDao.findAllPickups();
+                final List<ReviewPickups> pickups = new ArrayList<ReviewPickups>(0);
+                mAppExecutors.mainThread().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(c == null){
+                            callback.onDataNotAvailable();
+                        } else{
+                            if(c.getCount() == 0){
+                                callback.onDataNotAvailable();
+                            }
+                            while(c.moveToNext()) {
+                                ReviewPickups pickup = new ReviewPickups();
+                                pickup.setId(c.getInt(c.getColumnIndex(ReviewPickups.PICKUP_ID)));
+                                pickup.setDate(c.getString(c.getColumnIndex(ReviewPickups.PICKUP_DATE)));
+                                pickup.setTime(c.getString(c.getColumnIndex(ReviewPickups.PICKUP_TIME)));
+
+                                pickups.add(pickup);
+                            }
+                            c.close();
+                            callback.onPickupsLoaded(pickups);
+                        }
+                    }
+                });
+            }
+        };
+        mAppExecutors.diskIO().execute(runnable);
+    }
+
+    @Override
+    public void getPickup(@NonNull Integer PickupId, @NonNull GetPickupsCallback callback) {
+        Log.d("REPOSITORY","GetPickup");
+        Runnable runnable = new Runnable(){
+            @Override
+            public void run() {
+                final Cursor c = childPickupDao.findAllPickups();
+                final ReviewPickups pickup = new ReviewPickups();
+                mAppExecutors.mainThread().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(c == null){
+                            callback.onDataNotAvailable();
+                        } else{
+                            if(c.getCount() == 0){
+                                callback.onDataNotAvailable();
+                            }
+                            if(c.moveToFirst()){
+                                pickup.setId(c.getInt(c.getColumnIndex(ReviewPickups.PICKUP_ID)));
+                                pickup.setDate(c.getString(c.getColumnIndex(ReviewPickups.PICKUP_DATE)));
+                                pickup.setTime(c.getString(c.getColumnIndex(ReviewPickups.PICKUP_TIME)));
+                            }
+                            c.close();
+                            callback.onPickupsLoaded(pickup);
+                        }
+                    }
+                });
+            }
+        };
+        mAppExecutors.diskIO().execute(runnable);
+
+    }
+
+    @Override
+    public void savePickup(@NonNull ReviewPickups pickup) {
+        Log.d("REPOSITORY","SaveToDoItem");
+        Runnable runnable = new Runnable(){
+            @Override
+            public void run() {
+                ContentValues myCV = new ContentValues();
+                myCV.put(ReviewPickups.PICKUP_ID,pickup.getId());
+                myCV.put(ReviewPickups.PICKUP_DATE,pickup.getDate());
+                myCV.put(ReviewPickups.PICKUP_TIME,pickup.getTime());
+                final int numUpdated = childPickupDao.updatePickup(pickup);
+                //final int numUpdated = mContext.getContentResolver().update(Uri.parse("content://" + MessageProvider.AUTHORITY + "/" + MessageProvider.MESSAGE_TABLE_NAME), myCV,null,null);
+                Log.d("REPOSITORY","Update Messages updated " + String.valueOf(numUpdated) + " rows");
+            }
+        };
+        mAppExecutors.diskIO().execute(runnable);
+
+    }
+
+    @Override
+    public void createPickup(@NonNull ReviewPickups pickup, @NonNull CreatePickupCallback callback) {
+        Log.d("REPOSITORY","Deleting...");
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                long id = childPickupDao.insertPickup(pickup);
+                mAppExecutors.mainThread().execute(new Runnable(){
+                    @Override
+                    public void run() {
+                        callback.onPickupCreated((int)id);
+                    }
+                });
+            }
+        };
+        mAppExecutors.diskIO().execute(runnable);
+
+    }
+
+    @Override
+    public void deletePickup(@NonNull Integer id, @NonNull DeletePickupCallback callback) {
+        Log.d("REPOSITORY","Deleting...");
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    int count = childPickupDao.deletePickup(id);
+                    callback.onPickupDeleted();
+                }catch (Exception ex){
+                    Log.e("REPOSITORY",ex.toString());
+                    callback.onPickupDeleteFailure();
+                }
+            }
+        };
+        mAppExecutors.diskIO().execute(runnable);
+    }
 }

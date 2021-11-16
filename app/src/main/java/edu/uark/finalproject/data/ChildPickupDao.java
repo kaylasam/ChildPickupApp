@@ -98,6 +98,36 @@ public interface ChildPickupDao {
      */
     @Update
     int updateVehicle(Vehicles vehicle);
+
+    // REVIEW PICKUPS DAO
+
+    /**
+     * Insert a Vehicle into the table
+     * @return row ID for newly inserted data
+     */
+    @Insert
+    long insertPickup(ReviewPickups pickup);
+
+    /**
+     * select all Vehicles
+     * @return A {@link Cursor} of all Vehicles in the table
+     */
+    @Query("SELECT * FROM ReviewPickups")
+    Cursor findAllPickups();
+
+    /**
+     * Delete a Vehicle by ID
+     * @return A number of Vehicles deleted
+     */
+    @Query("DELETE FROM ReviewPickups WHERE id = :id ")
+    int deletePickup(long id);
+
+    /**
+     * Update the Vehicles
+     * @return A number of Vehicles updated
+     */
+    @Update
+    int updatePickup(ReviewPickups pickup);
 }
 
 

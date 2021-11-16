@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import edu.uark.finalproject.ChildProfileActivity.ChildProfileActivity;
 import edu.uark.finalproject.ParentProfileActivity.ParentProfileActivity;
 import edu.uark.finalproject.R;
+import edu.uark.finalproject.ReviewPickupsActivity.ReviewPickupsActivity;
 import edu.uark.finalproject.SchedulePickupActivity.SchedulePickupActivity;
 import edu.uark.finalproject.VehicleProfileActivity.VehicleProfileActivity;
 
@@ -64,7 +65,8 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 Toast.makeText(this, "MapViewCard", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.ReviewPickupsCard:
-                Toast.makeText(this, "ReviewPickupsCard", Toast.LENGTH_SHORT).show();
+                Intent reviewPickupsIntent = new Intent(this, ReviewPickupsActivity.class);
+                startActivity(reviewPickupsIntent);
                 break;
         }
     }
