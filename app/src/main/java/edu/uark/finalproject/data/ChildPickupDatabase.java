@@ -14,7 +14,7 @@ import androidx.room.RoomDatabase;
                 Vehicles.class,
                 ReviewPickups.class
         },
-        version = 1,
+        version = 3,
         exportSchema = false
 )
 public abstract class ChildPickupDatabase extends RoomDatabase {
@@ -37,6 +37,7 @@ public abstract class ChildPickupDatabase extends RoomDatabase {
                     // we are creating a database builder and passing
                     // our database class with our database name.
                     Room.databaseBuilder(context,ChildPickupDatabase.class,DATABASE_NAME)
+                            .fallbackToDestructiveMigration()
                             // below line is to
                             // build our database.
                             .build();

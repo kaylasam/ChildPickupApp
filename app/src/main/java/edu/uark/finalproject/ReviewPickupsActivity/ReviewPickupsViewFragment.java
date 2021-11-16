@@ -1,4 +1,4 @@
-package edu.uark.finalproject.VehicleProfileActivity;
+package edu.uark.finalproject.ReviewPickupsActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,20 +11,19 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import edu.uark.finalproject.DashboardActivity.DashboardActivity;
-import edu.uark.finalproject.ParentProfileActivity.ParentProfileViewAdapter;
 import edu.uark.finalproject.R;
 
-public class VehicleProfileViewFragment extends Fragment implements VehicleProfileContract.View{
+public class ReviewPickupsViewFragment extends Fragment implements ReviewPickupsContract.View{
 
-    private VehicleProfileContract.Presenter mPresenter;
-    private RecyclerView rvVehicleProfile;
+    private ReviewPickupsContract.Presenter mPresenter;
+    private RecyclerView rvReviewPickups;
 
-    public VehicleProfileViewFragment() {
+    public ReviewPickupsViewFragment() {
         // Required empty public constructor
     }
 
-    public static VehicleProfileViewFragment newInstance() {
-        VehicleProfileViewFragment fragment = new VehicleProfileViewFragment();
+    public static ReviewPickupsViewFragment newInstance() {
+        ReviewPickupsViewFragment fragment = new ReviewPickupsViewFragment();
         return fragment;
     }
 
@@ -37,16 +36,16 @@ public class VehicleProfileViewFragment extends Fragment implements VehicleProfi
     @Override
     public void onResume(){
         super.onResume();
-        rvVehicleProfile.setAdapter(new VehicleProfileViewAdapter(mPresenter.getVehicles()));
-        rvVehicleProfile.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rvReviewPickups.setAdapter(new ReviewPickupsViewAdapter(mPresenter.getReviewPickups()));
+        rvReviewPickups.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_vehicle_profile_view, container, false);
-        Button button = root.findViewById(R.id.vehicleBackButton);
+        View root = inflater.inflate(R.layout.fragment_review_pickups_view, container, false);
+        Button button = root.findViewById(R.id.reviewPickupsBackButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,19 +53,18 @@ public class VehicleProfileViewFragment extends Fragment implements VehicleProfi
                 startActivity(intent);
             }
         });
-        rvVehicleProfile = root.findViewById(R.id.rvAuthorizedVehicles);
+        rvReviewPickups = root.findViewById(R.id.rvReviewPickups);
         return root;
     }
 
     @Override
-    public void setPresenter(VehicleProfileContract.Presenter presenter) {
+    public void setPresenter(ReviewPickupsContract.Presenter presenter) {
         mPresenter = presenter;
     }
 
     @Override
-    public void notifyVehiclesLoaded() {
-        ((VehicleProfileViewAdapter)rvVehicleProfile.getAdapter()).setLocalDataSet(mPresenter.getVehicles());
-        rvVehicleProfile.getAdapter().notifyDataSetChanged();
-
+    public void notifyReviewPickupsLoaded() {
+        ((ReviewPickupsViewAdapter)rvReviewPickups.getAdapter()).setLocalDataSet(mPresenter.getReviewPickups());
+        rvReviewPickups.getAdapter().notifyDataSetChanged();
     }
 }
