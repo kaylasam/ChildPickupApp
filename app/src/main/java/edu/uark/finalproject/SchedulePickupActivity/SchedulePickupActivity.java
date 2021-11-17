@@ -25,6 +25,8 @@ public class SchedulePickupActivity extends AppCompatActivity {
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
                 String date = (i1 + 1) + "/" + i2 + "/" + i;
                 Log.d("SchedulePickupActivity: ", date);
+
+                // todo onClick of a date, take user to page that will allow for pickup time adjustments specific to day selected
             }
         });
 
