@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".DashboardActivity.DashboardActivity">
 
     <androidx.cardview.widget.CardView
@@ -75,7 +76,7 @@
             android:clickable="true"
             android:elevation="12dp"
             android:focusable="true"
-            android:backgroundTint="#F8DF81"
+            android:backgroundTint="#EDD05D"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="8dp">
 
@@ -101,10 +102,6 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Parent Profile"
-                    android:shadowColor="#000000"
-                    android:shadowDx="4"
-                    android:shadowDy="4"
-                    android:shadowRadius="5"
                     android:textAllCaps="true"
                     android:textColor="@color/white"
                     android:textSize="14sp"
@@ -153,10 +150,6 @@
                     android:gravity="center"
                     android:text="Child Profile"
                     android:textAllCaps="true"
-                    android:shadowColor="#000000"
-                    android:shadowDx="4"
-                    android:shadowDy="4"
-                    android:shadowRadius="5"
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -190,7 +183,7 @@
             android:clickable="true"
             android:elevation="12dp"
             android:focusable="true"
-            android:backgroundTint="#F6B4BF"
+            android:backgroundTint="#EFA7B3"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="8dp">
 
@@ -216,10 +209,6 @@
                     android:gravity="center"
                     android:text="Vehicle Profile"
                     android:textAllCaps="true"
-                    android:shadowColor="#000000"
-                    android:shadowDx="4"
-                    android:shadowDy="4"
-                    android:shadowRadius="5"
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -241,7 +230,7 @@
             android:clickable="true"
             android:elevation="12dp"
             android:focusable="true"
-            android:backgroundTint="#D5B6D5"
+            android:backgroundTint="#DAA4DA"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="8dp">
 
@@ -267,10 +256,6 @@
                     android:gravity="center"
                     android:text="Schedule Pickup"
                     android:textAllCaps="true"
-                    android:shadowColor="#000000"
-                    android:shadowDx="4"
-                    android:shadowDy="4"
-                    android:shadowRadius="5"
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -304,7 +289,7 @@
             android:clickable="true"
             android:elevation="12dp"
             android:focusable="true"
-            android:backgroundTint="#BADFDA"
+            android:backgroundTint="#97D6CD"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="8dp">
 
@@ -330,10 +315,6 @@
                     android:gravity="center"
                     android:text="Map View"
                     android:textAllCaps="true"
-                    android:shadowColor="#000000"
-                    android:shadowDx="4"
-                    android:shadowDy="4"
-                    android:shadowRadius="5"
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -381,10 +362,6 @@
                     android:gravity="center"
                     android:text="Review Pickups"
                     android:textAllCaps="true"
-                    android:shadowColor="#000000"
-                    android:shadowDx="4"
-                    android:shadowDy="4"
-                    android:shadowRadius="5"
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
                     android:textStyle="bold"
