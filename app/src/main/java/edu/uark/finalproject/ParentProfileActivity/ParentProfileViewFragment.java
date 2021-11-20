@@ -11,6 +11,9 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import edu.uark.finalproject.ChildProfileActivity.ChildProfileContract;
 import edu.uark.finalproject.ChildProfileActivity.ChildProfileViewAdapter;
 import edu.uark.finalproject.ChildProfileActivity.ChildProfileViewFragment;
@@ -49,7 +52,15 @@ public class ParentProfileViewFragment extends Fragment implements ParentProfile
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_parent_profile_view, container, false);
+        //View root2 = inflater.inflate(R.layout.fragment_parent_profile_view, container, false);
         Button button = root.findViewById(R.id.parentBackButton);
+        Button addParent = root.findViewById(R.id.add_parentBTN);
+        addParent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPresenter.notifyAddClicked();
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,6 +75,13 @@ public class ParentProfileViewFragment extends Fragment implements ParentProfile
     @Override
     public void setPresenter(ParentProfileContract.Presenter presenter) {
         mPresenter = presenter;
+    }
+
+    @Override
+    public void startAddParentActivity() {
+        Intent addParentIntent = new Intent();
+        addParentIntent.setClass(getActivity(), AddParentActivity.class);
+        startActivity(addParentIntent);
     }
 
     @Override

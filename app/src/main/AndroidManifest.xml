@@ -34,6 +34,10 @@
             android:exported="true" />
 
         <activity
+            android:name=".ParentProfileActivity.AddParentActivity"
+            android:exported="true" />
+
+        <activity
             android:name=".ChildProfileActivity.ChildProfileActivity"
             android:exported="true" />
 

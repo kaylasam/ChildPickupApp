@@ -52,4 +52,9 @@ public class ParentProfilePresenter implements ParentProfileContract.Presenter{
     public List<Parents> getParents() {
         return parentList;
     }
+
+    @Override
+    public void notifyAddClicked() {
+        mView.startAddParentActivity();
+    }
 }
