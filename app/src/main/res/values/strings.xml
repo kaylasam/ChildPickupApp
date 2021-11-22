@@ -46,5 +46,6 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="add_parent">Add Parent</string>
+    <string name="title_activity_maps">MapsActivity</string>
 
 </resources>

@@ -5,6 +5,7 @@ import androidx.cardview.widget.CardView;
 
 import edu.uark.finalproject.ChildProfileActivity.ChildProfileActivity;
 import edu.uark.finalproject.MapActivity.MapActivity;
+import edu.uark.finalproject.MapActivity.MapsActivity;
 import edu.uark.finalproject.ParentProfileActivity.ParentProfileActivity;
 import edu.uark.finalproject.R;
 import edu.uark.finalproject.ReviewPickupsActivity.ReviewPickupsActivity;
@@ -63,7 +64,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 startActivity(schedulePickupIntent);
                 break;
             case R.id.MapViewCard:
-                Intent mapIntent = new Intent(this, MapActivity.class);
+                Intent mapIntent = new Intent(this, MapsActivity.class);
                 startActivity(mapIntent);
                 break;
             case R.id.ReviewPickupsCard:
