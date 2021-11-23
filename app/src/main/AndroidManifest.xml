@@ -48,13 +48,13 @@
             android:exported="true" />
         <activity
             android:name=".SchedulePickupActivity.SchedulePickupActivity"
-            android:exported="true"></activity>
+            android:exported="true"/>
         <activity
             android:name=".MapActivity.MapsActivity"
             android:exported="true" />
         <activity
             android:name=".ReviewPickupsActivity.ReviewPickupsActivity"
-            android:exported="true"></activity>
+            android:exported="true"/>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCZLU56LlQdJGpZT-uqcWT9mMXv1c19sGs" />
