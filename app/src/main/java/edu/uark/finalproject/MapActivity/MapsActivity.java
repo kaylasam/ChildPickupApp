@@ -136,6 +136,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                             if (mMap != null) {
                                 LatLng myLocation = new LatLng(location.getLatitude(), location.getLongitude());
                                 mMap.moveCamera(CameraUpdateFactory.newLatLng(myLocation));
+                                // Zoom in, animating the camera.
+                                mMap.animateCamera(CameraUpdateFactory.zoomIn());
+                                // Zoom out to zoom level 10, animating with a duration of 2 seconds.
+                                mMap.animateCamera(CameraUpdateFactory.zoomTo(19), 2000, null);
                                 mMap.setMyLocationEnabled(true);
                             }
                             Log.d("MapsActivity", "" + location.getLatitude() + ":" + location.getLongitude());
