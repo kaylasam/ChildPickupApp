@@ -4,8 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import edu.uark.finalproject.ChildProfileActivity.ChildProfileActivity;
-import edu.uark.finalproject.MapActivity.MapActivity;
-import edu.uark.finalproject.MapActivity.MapsActivity;
+import edu.uark.finalproject.MapViewActivity.MapsActivity;
 import edu.uark.finalproject.ParentProfileActivity.ParentProfileActivity;
 import edu.uark.finalproject.R;
 import edu.uark.finalproject.ReviewPickupsActivity.ReviewPickupsActivity;
@@ -15,7 +14,6 @@ import edu.uark.finalproject.VehicleProfileActivity.VehicleProfileActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
     private String TAG = "DashboardActivity";

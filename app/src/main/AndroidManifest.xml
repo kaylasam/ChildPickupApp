@@ -3,9 +3,9 @@
     package="edu.uark.finalproject">
 
     <!--
-         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-         Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the "MyLocation" functionality.
+     The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+     Google Maps Android API v2, but you must specify either coarse or fine
+     location permissions for the "MyLocation" functionality.
     -->
     <application
         android:allowBackup="true"
@@ -14,17 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BestEmailClient">
-
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-        -->
-
-
         <activity
             android:name=".DashboardActivity.DashboardActivity"
             android:exported="true">
@@ -34,6 +23,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
         <activity
             android:name=".ParentProfileActivity.ParentProfileActivity"
             android:exported="true" />
@@ -48,27 +45,26 @@
             android:exported="true" />
         <activity
             android:name=".SchedulePickupActivity.SchedulePickupActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
-            android:name=".MapActivity.MapsActivity"
+            android:name=".MapViewActivity.MapsActivity"
             android:exported="true" />
         <activity
             android:name=".ReviewPickupsActivity.ReviewPickupsActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCZLU56LlQdJGpZT-uqcWT9mMXv1c19sGs" />
-    </application>
 
-    <!--
-     The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-     Google Maps Android API v2, but you must specify either coarse or fine
-     location permissions for the "MyLocation" functionality.
-    -->
-    <uses-permission android:name="android.permission.INTERNET" />
+        <receiver
+            android:name=".MapViewActivity.GeofenceBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+    </application>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
