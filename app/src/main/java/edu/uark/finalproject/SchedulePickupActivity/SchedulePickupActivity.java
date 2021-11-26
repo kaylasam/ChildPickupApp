@@ -21,7 +21,7 @@ import edu.uark.finalproject.R;
 public class SchedulePickupActivity extends AppCompatActivity {
 
     private CalendarView mCalendarView;
-    int tpHour, tpMinute, tpMonth, tpDay;
+    int tpHour, tpMinute;
     Boolean isInRange;
     EditText etPickupTime;
 

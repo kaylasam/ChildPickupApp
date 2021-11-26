@@ -2,12 +2,16 @@ package edu.uark.finalproject.MapViewActivity;
 
 import android.Manifest;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Looper;
+import android.provider.Settings;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -40,6 +44,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+
 public class MapsActivity extends AppCompatActivity
         implements
         OnMapReadyCallback,
@@ -58,6 +63,7 @@ public class MapsActivity extends AppCompatActivity
     private LocationCallback locationCallback;
     private GeofencingClient geofencingClient;
     private GeofenceHelper geofenceHelper;
+    Button viewQueue;
 
 
     @Override
@@ -115,6 +121,9 @@ public class MapsActivity extends AppCompatActivity
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        viewQueue = (Button) findViewById(R.id.viewQueueButton);
+        //viewQueue.setVisibility(VISIBLE);
     }
 
 
@@ -276,6 +285,11 @@ public class MapsActivity extends AppCompatActivity
         });
 
     }
+
+    public void showParentQueueButton(){
+        //viewQueue.setVisibility(View.VISIBLE);
+    }
+
 }
 
       

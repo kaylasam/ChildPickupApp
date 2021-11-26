@@ -47,5 +47,6 @@
 
     <string name="add_parent">Add Parent</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="parent_queue_title">Parent Queue</string>
 
 </resources>
