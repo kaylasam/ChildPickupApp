@@ -10,6 +10,7 @@ public interface ChildProfileContract {
     interface View{
         public void setPresenter(Presenter presenter);
         public void notifyChildrenLoaded();
+        public void startAddChildActivity();
     }
 
     interface Presenter{
@@ -17,5 +18,6 @@ public interface ChildProfileContract {
         public void setView(View mView);
         public void setRepository(ChildPickupRepository childData);
         public List<Children> getChildren();
+        public void notifyAddClicked();
     }
 }

@@ -2,6 +2,7 @@ package edu.uark.finalproject.ChildProfileActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -68,5 +69,8 @@ public class ChildProfileActivity extends AppCompatActivity {
         }
 
         // Update the shared preferences with the current version code
+    }
+    public void onClick(View v){
+        finish();
     }
 }

@@ -37,8 +37,21 @@
         <activity
             android:name=".ParentProfileActivity.AddParentActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".ParentProfileActivity.ViewParentActivity"
+            android:exported="true" />
+
         <activity
             android:name=".ChildProfileActivity.ChildProfileActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ChildProfileActivity.AddChildActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ChildProfileActivity.ViewChildActivity"
             android:exported="true" />
         <activity
             android:name=".VehicleProfileActivity.VehicleProfileActivity"

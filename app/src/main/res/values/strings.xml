@@ -46,6 +46,8 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="add_parent">Add Parent</string>
+    <string name="add_child">Add Child</string>
+    <string name="add_vehicle">Add Vehicle</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="parent_queue_title">Parent Queue</string>
 

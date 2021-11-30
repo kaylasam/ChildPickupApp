@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,10 +20,19 @@ public class AddParentActivity extends AppCompatActivity{
     ChildPickupRepository parentData;
     Parents myParent;
 
+    private EditText Name;
+    private EditText Phone;
+    private EditText Email;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_parent);
+
+        //Name = findViewById(R.id.apParentName);
+        //Phone = findViewById(R.id.apParentPhoneNumber);
+        //Email = findViewById(R.id.apParentEmail);
+
         Intent callingIntent = this.getIntent();
         Integer parentId = callingIntent.getIntExtra("parent_id",-1);
         myParent = new Parents();
@@ -40,6 +50,9 @@ public class AddParentActivity extends AppCompatActivity{
             @Override
             public void onParentLoaded(Parents parents) {
                 myParent = parents;
+                //Name.setText(parents.getName());
+                //Phone.setText(parents.getPhone());
+                //Email.setText(parents.getEmail());
             }
 
             @Override

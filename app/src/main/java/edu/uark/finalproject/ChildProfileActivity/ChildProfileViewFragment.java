@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import edu.uark.finalproject.DashboardActivity.DashboardActivity;
+import edu.uark.finalproject.ParentProfileActivity.AddParentActivity;
 import edu.uark.finalproject.R;
 
 public class ChildProfileViewFragment extends Fragment implements ChildProfileContract.View{
@@ -47,6 +48,13 @@ public class ChildProfileViewFragment extends Fragment implements ChildProfileCo
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_child_profile_view, container, false);
         Button button = root.findViewById(R.id.childBackButton);
+        Button addChild = root.findViewById(R.id.add_childBTN);
+        addChild.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPresenter.notifyAddClicked();
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,6 +69,13 @@ public class ChildProfileViewFragment extends Fragment implements ChildProfileCo
     @Override
     public void setPresenter(ChildProfileContract.Presenter presenter) {
         mPresenter = presenter;
+    }
+
+    @Override
+    public void startAddChildActivity() {
+        Intent addChildIntent = new Intent();
+        addChildIntent.setClass(getActivity(), AddChildActivity.class);
+        startActivity(addChildIntent);
     }
 
     @Override

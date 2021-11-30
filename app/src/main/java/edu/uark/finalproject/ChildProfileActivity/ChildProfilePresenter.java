@@ -52,4 +52,9 @@ public class ChildProfilePresenter implements ChildProfileContract.Presenter{
     public List<Children> getChildren() {
         return childrenList;
     }
+
+    @Override
+    public void notifyAddClicked() {
+        mView.startAddChildActivity();
+    }
 }

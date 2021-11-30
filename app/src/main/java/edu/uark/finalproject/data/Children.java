@@ -19,14 +19,14 @@ public class Children {
     private String name;
 
     @ColumnInfo(name = CHILD_AGE)
-    private Integer age;
+    private String age;
+    //private Integer age;
 
     @ColumnInfo(name = CHILD_GRADE)
-    private Integer grade;
+    private String grade;
+    //private Integer grade;
 
-    public Integer getId() {
-        return id;
-    }
+    public Integer getId() { return id; }
 
     public void setId(Integer id) {
         this.id = id;
@@ -40,19 +40,21 @@ public class Children {
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
-    }
+    public String getAge() { return age; }
+    //public Integer getAge() { return age; }
 
-    public void setAge(Integer age) {
+    public void setAge(String age) {
         this.age = age;
     }
+    //public void setAge(Integer age) {this.age = age; }
 
-    public Integer getGrade() {
+    public String getGrade() {
         return grade;
     }
+    //public Integer getGrade() { return grade; }
 
-    public void setGrade(Integer grade) {
+    public void setGrade(String grade) {
         this.grade = grade;
     }
+    //public void setGrade(Integer grade) { this.grade = grade; }
 }
