@@ -22,15 +22,6 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-
-        // TODO: This method is called when the BroadcastReceiver is receiving
-        // an Intent broadcast.
-//        Toast toast = Toast.makeText(context, "Geofence entered", Toast.LENGTH_LONG);
-//        toast.show();
-
-        // todo upon receiving broadcast, display button so parent can see their spot in the queue
-        MapsActivity mapsActivity = new MapsActivity();
-
         // grabbing the geofencing event that is passed from onReceive method
         GeofencingEvent geofencingEvent = GeofencingEvent.fromIntent(intent);
 
@@ -53,7 +44,6 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
                 case Geofence.GEOFENCE_TRANSITION_ENTER:
                     Toast enter = Toast.makeText(context, "Geofence entered", Toast.LENGTH_LONG);
                     enter.show();
-                    mapsActivity.showParentQueueButton();
                     return;
                 case Geofence.GEOFENCE_TRANSITION_DWELL:
                     Toast dwell = Toast.makeText(context, "Geofence dwelling", Toast.LENGTH_LONG);

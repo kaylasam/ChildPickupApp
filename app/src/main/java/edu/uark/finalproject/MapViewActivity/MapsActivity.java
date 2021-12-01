@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Looper;
 import android.provider.Settings;
@@ -54,6 +56,8 @@ public class MapsActivity extends AppCompatActivity
         GoogleMap.OnMarkerClickListener {
 
     private final LatLng SCHOOL_LATLNG = new LatLng(36.2712, -94.1388);
+    private final double SCHOOL_LAT = 36.2712;
+    private final double SCHOOL_LONG = -94.1388;
     private final float GEOFENCE_RADIUS = 250;
     private final String GEOFENCE_ID = "1234";
     private GoogleMap mMap;
@@ -63,8 +67,6 @@ public class MapsActivity extends AppCompatActivity
     private LocationCallback locationCallback;
     private GeofencingClient geofencingClient;
     private GeofenceHelper geofenceHelper;
-    Button viewQueue;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,9 +75,10 @@ public class MapsActivity extends AppCompatActivity
         requestingLocationUpdates = true;
         geofenceHelper = new GeofenceHelper(this);
         geofencingClient = LocationServices.getGeofencingClient(this);
+        View viewQueue = (View) findViewById(R.id.viewQueueButton);
+        viewQueue.setVisibility(View.GONE);
 
-
-        addGeofence(SCHOOL_LATLNG, GEOFENCE_RADIUS);
+        addGeofence(SCHOOL_LATLNG, GEOFENCE_RADIUS, viewQueue);
 
         ActivityResultLauncher<String[]> locationPermissionRequest =
                 registerForActivityResult(new ActivityResultContracts
@@ -114,6 +117,34 @@ public class MapsActivity extends AppCompatActivity
             }
         };
 
+        // if user is within geofence area, button to view parent queue will appear
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, new LocationListener() {
+            @Override
+            public void onLocationChanged(@NonNull Location location) {
+                Location school = new Location("point B");
+                school.setLatitude(SCHOOL_LAT);
+                school.setLongitude(SCHOOL_LONG);
+
+                if(location.distanceTo(school) <= GEOFENCE_RADIUS){
+                    viewQueue.setVisibility(View.VISIBLE);
+                }else
+                    viewQueue.setVisibility(View.GONE);
+                Log.d("MapsActivity: distance between user and school: ", String.valueOf(location.distanceTo(school)));
+
+            }
+        });
+
 //        binding = ActivityMapsBinding.inflate(getLayoutInflater());
 //        setContentView(binding.getRoot());
 
@@ -121,9 +152,6 @@ public class MapsActivity extends AppCompatActivity
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-        viewQueue = (Button) findViewById(R.id.viewQueueButton);
-        //viewQueue.setVisibility(VISIBLE);
     }
 
 
@@ -252,7 +280,7 @@ public class MapsActivity extends AppCompatActivity
         mMap.addCircle(circleOptions);
     }
 
-    private void addGeofence(LatLng latLng, float radius) {
+    private void addGeofence(LatLng latLng, float radius, View view) {
         Geofence geofence = geofenceHelper.getGeofence(GEOFENCE_ID, latLng, radius,
                 Geofence.GEOFENCE_TRANSITION_DWELL |
                         Geofence.GEOFENCE_TRANSITION_ENTER |
@@ -286,10 +314,12 @@ public class MapsActivity extends AppCompatActivity
 
     }
 
-    public void showParentQueueButton(){
-        //viewQueue.setVisibility(View.VISIBLE);
-    }
+    public void showParentQueueButton(Boolean buttonShown, View viewQueue){
 
+        if (buttonShown == true)
+            viewQueue.setVisibility(View.VISIBLE);
+        else
+            viewQueue.setVisibility(View.GONE);
+    }
 }
 
-      
