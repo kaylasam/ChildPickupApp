@@ -1,5 +1,6 @@
 package edu.uark.finalproject.ParentProfileActivity;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ public class ParentProfileViewAdapter extends RecyclerView.Adapter<ParentProfile
     }
 
     // Create new views (invoked by the layout manager)
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         // Create a new view, which defines the UI of the list item
@@ -46,6 +48,16 @@ public class ParentProfileViewAdapter extends RecyclerView.Adapter<ParentProfile
         holder.getTvParentNumber().setText(parentPhone);
         String parentEmail = localDataSet.get(position).getEmail();
         holder.getTvParentEmail().setText(parentEmail);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Integer parentId = Integer.valueOf((String) view.getTag());
+                Intent addparent = new Intent();
+                addparent.setClass(view.getContext(), ViewParentActivity.class);
+                addparent.putExtra("parent_id", parentId);
+                view.getContext().startActivity(addparent);
+            }
+        });
     }
 
     @Override

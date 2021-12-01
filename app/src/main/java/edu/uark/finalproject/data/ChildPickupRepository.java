@@ -69,8 +69,10 @@ public class ChildPickupRepository implements ChildPickupDataSource {
                             while(c.moveToNext()) {
                                 Children child = new Children();
                                 child.setId(c.getInt(c.getColumnIndex(Children.CHILD_ID)));
-                                child.setAge(c.getInt(c.getColumnIndex(Children.CHILD_AGE)));
-                                child.setGrade(c.getInt(c.getColumnIndex(Children.CHILD_GRADE)));
+                                //child.setAge(c.getInt(c.getColumnIndex(Children.CHILD_AGE)));
+                                child.setAge(c.getString(c.getColumnIndex(Children.CHILD_AGE)));
+                                //child.setGrade(c.getInt(c.getColumnIndex(Children.CHILD_GRADE)));
+                                child.setGrade(c.getString(c.getColumnIndex(Children.CHILD_GRADE)));
                                 child.setName(c.getString(c.getColumnIndex(Children.CHILD_NAME)));
 
                                 children.add(child);
@@ -104,8 +106,10 @@ public class ChildPickupRepository implements ChildPickupDataSource {
                             }
                             if(c.moveToFirst()){
                                 child.setId(c.getInt(c.getColumnIndex(Children.CHILD_ID)));
-                                child.setAge(c.getInt(c.getColumnIndex(Children.CHILD_AGE)));
-                                child.setGrade(c.getInt(c.getColumnIndex(Children.CHILD_GRADE)));
+                                //child.setAge(c.getInt(c.getColumnIndex(Children.CHILD_AGE)));
+                                child.setAge(c.getString(c.getColumnIndex(Children.CHILD_AGE)));
+                                //child.setGrade(c.getInt(c.getColumnIndex(Children.CHILD_GRADE)));
+                                child.setGrade(c.getString(c.getColumnIndex(Children.CHILD_GRADE)));
                                 child.setName(c.getString(c.getColumnIndex(Children.CHILD_NAME)));
                             }
                             c.close();
