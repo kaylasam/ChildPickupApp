@@ -3,6 +3,7 @@ package edu.uark.finalproject.MapViewActivity;
 import android.Manifest;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -22,6 +23,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import edu.uark.finalproject.R;
+import edu.uark.finalproject.ViewQueueActivity.ViewQueueActivity;
 import edu.uark.finalproject.databinding.ActivityMapsBinding;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -49,11 +51,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 
 public class MapsActivity extends AppCompatActivity
         implements
-        OnMapReadyCallback,
-        ConnectionCallbacks,
-        OnConnectionFailedListener,
-        GoogleMap.OnMapClickListener,
-        GoogleMap.OnMarkerClickListener {
+        OnMapReadyCallback {
 
     private final LatLng SCHOOL_LATLNG = new LatLng(36.2712, -94.1388);
     private final double SCHOOL_LAT = 36.2712;
@@ -138,6 +136,14 @@ public class MapsActivity extends AppCompatActivity
 
                 if(location.distanceTo(school) <= GEOFENCE_RADIUS){
                     viewQueue.setVisibility(View.VISIBLE);
+                    Button viewQueue = findViewById(R.id.viewQueueButton);
+                    viewQueue.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent parentQueue = new Intent(view.getContext(), ViewQueueActivity.class);
+                            startActivity(parentQueue);
+                        }
+                    });
                 }else
                     viewQueue.setVisibility(View.GONE);
                 Log.d("MapsActivity: distance between user and school: ", String.valueOf(location.distanceTo(school)));
@@ -242,33 +248,6 @@ public class MapsActivity extends AppCompatActivity
                 Looper.getMainLooper());
     }
 
-
-    @Override
-    public void onMapClick(LatLng latLng) {
-        Log.d("MapsActivity: ", "onMapClick(" + latLng + ")");
-    }
-
-    @Override
-    public boolean onMarkerClick(Marker marker) {
-        Log.d("MapsActivity: ", "onMarkerClickListener: " + marker.getPosition());
-        return false;
-    }
-
-    @Override
-    public void onConnected(@Nullable Bundle bundle) {
-
-    }
-
-    @Override
-    public void onConnectionSuspended(int i) {
-
-    }
-
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
-    }
-
     // visual display of geofence
     private void addCircle(LatLng latLng, float radius) {
         CircleOptions circleOptions = new CircleOptions();
@@ -312,14 +291,6 @@ public class MapsActivity extends AppCompatActivity
             }
         });
 
-    }
-
-    public void showParentQueueButton(Boolean buttonShown, View viewQueue){
-
-        if (buttonShown == true)
-            viewQueue.setVisibility(View.VISIBLE);
-        else
-            viewQueue.setVisibility(View.GONE);
     }
 }
 
