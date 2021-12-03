@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import edu.uark.finalproject.R;
@@ -12,9 +14,9 @@ import edu.uark.finalproject.R;
 public class ViewQueueAdapter extends RecyclerView.Adapter<ViewQueueViewHolder> {
 
     Context c;
-    String[] parentUsers;
+    ArrayList<String> parentUsers;
 
-    public ViewQueueAdapter(Context c, String[] parentUsers) {
+    public ViewQueueAdapter(Context c, ArrayList<String> parentUsers) {
         this.c = c;
         this.parentUsers = parentUsers;
     }
@@ -27,11 +29,11 @@ public class ViewQueueAdapter extends RecyclerView.Adapter<ViewQueueViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewQueueViewHolder holder, int position) {
-        holder.tvParentName.setText(parentUsers[position]);
+        holder.tvParentName.setText(parentUsers.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return parentUsers.length;
+        return parentUsers.size();
     }
 }
