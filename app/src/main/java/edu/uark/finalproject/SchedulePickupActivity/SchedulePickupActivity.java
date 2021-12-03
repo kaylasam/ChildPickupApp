@@ -21,6 +21,7 @@ import edu.uark.finalproject.R;
 public class SchedulePickupActivity extends AppCompatActivity {
 
     private CalendarView mCalendarView;
+    private Calendar mCalendarStartPickupTime, mCalendarEndPickupTime, scheduledTime;
     int tpHour, tpMinute;
     Boolean isInRange;
     EditText etPickupTime;
@@ -34,6 +35,7 @@ public class SchedulePickupActivity extends AppCompatActivity {
         etPickupTime.setFocusable(false);
         etPickupTime.setClickable(true);
 
+        setOpeningAndClosingTimes();
         mCalendarView = (CalendarView) findViewById(R.id.schedulePickupCalendar);
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -52,15 +54,13 @@ public class SchedulePickupActivity extends AppCompatActivity {
         });
     }
 
-    private boolean checkTimeInRange(int hour, int minute) {
+    private boolean checkTimeInRange() {
         boolean inRange;
 
-        // if parent has set time less than 3:00PM or greater than 4:00PM
-        if (hour > 16 && minute > 0 || hour < 15)
-            inRange = false;
-        else
+        if(scheduledTime.after(mCalendarStartPickupTime) && scheduledTime.before(mCalendarEndPickupTime))
             inRange = true;
-
+        else
+            inRange = false;
         return inRange;
     }
 
@@ -102,12 +102,14 @@ public class SchedulePickupActivity extends AppCompatActivity {
                 tpHour = hour;
                 tpMinute = minute;
                 // initialize calendar
-                Calendar calendar = Calendar.getInstance();
+                scheduledTime = Calendar.getInstance();
                 // set hour and minute
-                calendar.set(0, 0, 0, tpHour, tpMinute);
+                scheduledTime.set(Calendar.HOUR_OF_DAY, hour);
+                scheduledTime.set(Calendar.MINUTE, minute);
                 Log.d("SchedulePickupActivity: ", "time selected: " + hour + ":" + minute);
 
-                isInRange = checkTimeInRange(tpHour, tpMinute);
+                isInRange = checkTimeInRange();
+                Log.d("SchedulePickupActivity: ", isInRange.toString());
                 displayScheduledPickupToast(isInRange, tpHour, tpMinute);
             }
         }, 12, 0, false
@@ -119,6 +121,20 @@ public class SchedulePickupActivity extends AppCompatActivity {
 
         // show dialog
         timePickerDialog.show();
+    }
+
+    private void setOpeningAndClosingTimes() {
+        // set start pickup time
+        mCalendarStartPickupTime = Calendar.getInstance();
+        mCalendarStartPickupTime.set(Calendar.HOUR, 3);
+        mCalendarStartPickupTime.set(Calendar.MINUTE, 00);
+        mCalendarStartPickupTime.set(Calendar.AM_PM, Calendar.PM);
+
+        // set end pickup time
+        mCalendarEndPickupTime = Calendar.getInstance();
+        mCalendarEndPickupTime.set(Calendar.HOUR, 4);
+        mCalendarEndPickupTime.set(Calendar.MINUTE, 00);
+        mCalendarEndPickupTime.set(Calendar.AM_PM, Calendar.PM);
     }
 
 

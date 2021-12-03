@@ -146,8 +146,6 @@ public class MapsActivity extends AppCompatActivity
                     });
                 }else
                     viewQueue.setVisibility(View.GONE);
-                Log.d("MapsActivity: distance between user and school: ", String.valueOf(location.distanceTo(school)));
-
             }
         });
 
