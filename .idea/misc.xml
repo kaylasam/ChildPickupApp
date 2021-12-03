@@ -26,6 +26,7 @@
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/activity_review_pickups.xml" value="0.12" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/activity_track_parent.xml" value="0.1" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/activity_vehicle_profile.xml" value="0.15806159420289856" />
+        <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/add_child.xml" value="0.1" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/adult_profile.xml" value="0.1" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/child_profile.xml" value="0.22" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/content_login_screen.xml" value="0.1" />
@@ -36,6 +37,7 @@
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/fragment_home.xml" value="0.17255434782608695" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/fragment_inbox_view.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/fragment_parent_profile_view.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/fragment_parent_queue.xml" value="0.22" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/fragment_review_pickups_view.xml" value="0.1" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/fragment_second.xml" value="0.17255434782608695" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/fragment_slideshow.xml" value="0.17255434782608695" />
@@ -46,12 +48,15 @@
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/rv_child_profile_item.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/rv_message_item.xml" value="0.22" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/rv_parent_profile_item.xml" value="0.22" />
+        <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/rv_parent_queue.xml" value="0.1" />
+        <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/rv_parent_queue_item.xml" value="0.1" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/rv_review_pickups_item.xml" value="0.22" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/rv_vehicle_profile.xml" value="0.11875" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/rv_vehicle_profile_item.xml" value="0.1" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/schedule_pickup.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/time_picker.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/vehicle_profile.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/FinalProject/app/src/main/res/layout/view_child.xml" value="0.1" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/app/src/main/res/layout/activity_inbox.xml" value="0.1" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/app/src/main/res/layout/fragment_second.xml" value="0.1" />
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/app/src/main/res/layout/rv_message_item.xml" value="0.1" />
