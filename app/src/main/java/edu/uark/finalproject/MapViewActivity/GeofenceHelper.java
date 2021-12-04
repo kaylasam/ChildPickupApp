@@ -26,26 +26,29 @@ public class GeofenceHelper extends ContextWrapper{
     }
 
     public GeofencingRequest getGeofencingRequest(Geofence geofence){
-        return new GeofencingRequest.Builder()
-                .addGeofence(geofence)
-                .setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER)
-                .build();
+        GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
+        builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER);
+        builder.addGeofence(geofence);
+        return builder.build();
     }
 
     public Geofence getGeofence(String ID, LatLng latLng, float radius, int transitionTypes){
         return new Geofence.Builder()
                 .setCircularRegion(latLng.latitude, latLng.longitude, radius)
-                .setRequestId(ID)
+                .setRequestId(ID) // Set the request ID of the geofence. This is a string to identify this geofence.
                 .setTransitionTypes(transitionTypes)
                 .setLoiteringDelay(5000)    // will notify after 5 seconds that user is in geofence
                 .setExpirationDuration(Geofence.NEVER_EXPIRE)
                 .build();
     }
 
-    public PendingIntent getPendingIntent(){
+    public PendingIntent getGeofencePendingIntent(){
+        // Reuse the PendingIntent if we already have it.
         if(pendingIntent != null)
             return pendingIntent;
         Intent intent = new Intent(this, GeofenceBroadcastReceiver.class);
+        // We use FLAG_UPDATE_CURRENT so that we get the same pending intent back when
+        // calling addGeofences() and removeGeofences().
         pendingIntent = PendingIntent.getBroadcast(this, 1, intent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
         return pendingIntent;

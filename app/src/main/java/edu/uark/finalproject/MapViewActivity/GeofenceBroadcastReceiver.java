@@ -30,25 +30,5 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
             Log.d("GeofenceBroadcastReceiver: ", "Error grabbing geofence event");
             return;
         }
-
-        // get list of geofence triggering event
-        List<Geofence> geofenceList = geofencingEvent.getTriggeringGeofences();
-
-        // loop through event list and display toast to distinguish which was triggered
-        for(Geofence geofence: geofenceList) {
-            Log.d("GeofenceBroadcastReceiver: ", geofence.getRequestId());
-
-            int transitionType = geofencingEvent.getGeofenceTransition();
-
-            switch (transitionType) {
-                case Geofence.GEOFENCE_TRANSITION_ENTER:
-                    return;
-                case Geofence.GEOFENCE_TRANSITION_DWELL:
-                    return;
-                case Geofence.GEOFENCE_TRANSITION_EXIT:
-                    return;
-            }
-        }
     }
-
 }

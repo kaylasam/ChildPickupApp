@@ -134,6 +134,7 @@ public class MapsActivity extends AppCompatActivity
                 school.setLatitude(SCHOOL_LAT);
                 school.setLongitude(SCHOOL_LONG);
 
+                // visual display of "view queue" button
                 if(location.distanceTo(school) <= GEOFENCE_RADIUS){
                     viewQueue.setVisibility(View.VISIBLE);
                     Button viewQueue = findViewById(R.id.viewQueueButton);
@@ -263,7 +264,7 @@ public class MapsActivity extends AppCompatActivity
                         Geofence.GEOFENCE_TRANSITION_ENTER |
                         Geofence.GEOFENCE_TRANSITION_EXIT);
         GeofencingRequest geofencingRequest = geofenceHelper.getGeofencingRequest(geofence);
-        PendingIntent pendingIntent = geofenceHelper.getPendingIntent();
+        PendingIntent pendingIntent = geofenceHelper.getGeofencePendingIntent();
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -278,12 +279,13 @@ public class MapsActivity extends AppCompatActivity
         geofencingClient.addGeofences(geofencingRequest, pendingIntent).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
+                // Geofences added
                 Log.d("MapsActivity: ", "Geofence added");
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                //Log.d("MapsActivity: ", "Geofence not available");
+                // Failed to add geofences
                 String errorMessage = geofenceHelper.errorMessage(e);
                 Log.d("MapsActivity: ", errorMessage);
             }
