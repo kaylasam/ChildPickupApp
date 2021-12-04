@@ -42,16 +42,10 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
 
             switch (transitionType) {
                 case Geofence.GEOFENCE_TRANSITION_ENTER:
-                    Toast enter = Toast.makeText(context, "Geofence entered", Toast.LENGTH_LONG);
-                    enter.show();
                     return;
                 case Geofence.GEOFENCE_TRANSITION_DWELL:
-                    Toast dwell = Toast.makeText(context, "Geofence dwelling", Toast.LENGTH_LONG);
-                    dwell.show();
                     return;
                 case Geofence.GEOFENCE_TRANSITION_EXIT:
-                    Toast exit = Toast.makeText(context, "Geofence exited", Toast.LENGTH_LONG);
-                    exit.show();
                     return;
             }
         }

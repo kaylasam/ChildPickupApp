@@ -23,6 +23,7 @@ public class ViewQueueActivity extends AppCompatActivity {
         parentUsers.add("George Washington");
         parentUsers.add("Wendy Williams");
         parentUsers.add("Alex Nelson");
+        parentUsers.add("John Smith");
 
         mRecyclerView = (RecyclerView) findViewById(R.id.rvParentQueue);
         mRecyclerView.setHasFixedSize(true);
