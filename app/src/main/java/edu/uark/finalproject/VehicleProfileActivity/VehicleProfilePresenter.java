@@ -53,4 +53,9 @@ public class VehicleProfilePresenter implements VehicleProfileContract.Presenter
     public List<Vehicles> getVehicles() {
         return vehicleList;
     }
+
+    @Override
+    public void notifyAddClicked() {
+        mView.startAddVehicleActivity();
+    }
 }

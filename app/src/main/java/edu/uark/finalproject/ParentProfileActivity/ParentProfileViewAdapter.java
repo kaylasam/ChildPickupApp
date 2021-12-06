@@ -48,6 +48,8 @@ public class ParentProfileViewAdapter extends RecyclerView.Adapter<ParentProfile
         holder.getTvParentNumber().setText(parentPhone);
         String parentEmail = localDataSet.get(position).getEmail();
         holder.getTvParentEmail().setText(parentEmail);
+
+        //Allow user to click an individual child profile and view information
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

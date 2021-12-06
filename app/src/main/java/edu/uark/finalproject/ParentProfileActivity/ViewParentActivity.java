@@ -18,9 +18,11 @@ import util.AppExecutors;
 
 public class ViewParentActivity extends AppCompatActivity {
 
+    //Creates objects for repository and parent table
     ChildPickupRepository parentData;
     Parents myParent;
 
+    //Variables for information fields
     private TextView Name;
     private TextView Phone;
     private TextView Email;
@@ -30,6 +32,7 @@ public class ViewParentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_parent);
 
+        //Sets information fields with xml
         Name = findViewById(R.id.apParentName);
         Phone = findViewById(R.id.apParentPhoneNumber);
         Email = findViewById(R.id.apParentEmail);
@@ -42,6 +45,7 @@ public class ViewParentActivity extends AppCompatActivity {
 
     }
 
+    //Retrieves Parent information fields
     private void populateExistingParent(Integer parentId){
         Log.d("AddParentActivity","ParentId= "+parentId);
         parentData.getParent(parentId, new ChildPickupDataSource.GetParentCallback() {
@@ -60,11 +64,8 @@ public class ViewParentActivity extends AppCompatActivity {
         });
     }
 
+    //Returns to parent profile view
     public void onClick(View v){
-        //myParent.setName(((TextView)findViewById(R.id.apParentName)).getText().toString());
-        //myParent.setPhone(((TextView)findViewById(R.id.apParentPhoneNumber)).getText().toString());
-        //myParent.setEmail(((TextView)findViewById(R.id.apParentEmail)).getText().toString());
-        //parentData.saveParent(myParent);
         finish();
     }
 

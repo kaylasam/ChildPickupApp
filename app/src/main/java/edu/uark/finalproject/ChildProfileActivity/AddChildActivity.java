@@ -21,10 +21,6 @@ public class AddChildActivity extends AppCompatActivity {
     ChildPickupRepository childData;
     Children myChild;
 
-    /*private EditText Name;
-    private EditText Age;
-    private EditText Grade;*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -41,6 +37,7 @@ public class AddChildActivity extends AppCompatActivity {
         }
     }
 
+    //Loads existing child
     private void populateExistingChild(Integer childId){
         Log.d("AddParentActivity","ChildId= "+childId);
         childData.getChild(childId, new ChildPickupDataSource.GetChildCallback() {
@@ -56,6 +53,7 @@ public class AddChildActivity extends AppCompatActivity {
         });
     }
 
+    //Adds a new child and stores in database
     private void addNewChild(){
         myChild = new Children();
         myChild.setName("");
@@ -73,6 +71,7 @@ public class AddChildActivity extends AppCompatActivity {
         return;
     }
 
+    //Sets and saves child information from user input when "Add Child" button clicked
     public void onClick(View v){
         myChild.setName(((TextView)findViewById(R.id.acChildName)).getText().toString());
         myChild.setAge(((TextView)findViewById(R.id.acChildAge)).getText().toString());

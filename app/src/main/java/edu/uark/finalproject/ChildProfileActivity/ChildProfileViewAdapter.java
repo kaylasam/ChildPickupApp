@@ -51,6 +51,8 @@ public class ChildProfileViewAdapter extends RecyclerView.Adapter<ChildProfileVi
         holder.getTvChildAge().setText(childAge);
         String childGrade = localDataSet.get(position).getGrade().toString();
         holder.getTvChildGrade().setText(childGrade);
+
+       //Allow user to click an individual child profile and view information
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

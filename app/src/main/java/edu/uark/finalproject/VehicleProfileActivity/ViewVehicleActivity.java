@@ -17,9 +17,11 @@ import util.AppExecutors;
 
 public class ViewVehicleActivity extends AppCompatActivity {
 
+    //Creates objects for repository and vehicle table
     ChildPickupRepository vehicleData;
     Vehicles myVehicle;
 
+    //Variables for information fields
     private TextView Make;
     private TextView Model;
     private TextView Color;
@@ -29,6 +31,7 @@ public class ViewVehicleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_vehicle);
 
+        //Sets information fields with xml
         Make = findViewById(R.id.vvVehicleMake);
         Model = findViewById(R.id.vvVehicleModel);
         Color = findViewById(R.id.vvVehicleColor);
@@ -40,6 +43,7 @@ public class ViewVehicleActivity extends AppCompatActivity {
         populateExistingVehicle(vehicleId);
     }
 
+    //Retrieves vehicle information fields
     private void populateExistingVehicle(Integer vehicleId){
         Log.d("AddVehicleActivity","VehicleId= "+vehicleId);
         vehicleData.getVehicle(vehicleId, new ChildPickupDataSource.GetVehiclesCallback() {
@@ -58,6 +62,7 @@ public class ViewVehicleActivity extends AppCompatActivity {
         });
     }
 
+    //Returns to vehicle profile view
     public void onClick(View v){
         finish();
     }

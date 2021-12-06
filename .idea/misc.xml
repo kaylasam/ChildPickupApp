@@ -68,17 +68,26 @@
         <entry key="..\:/Users/jitm2136/Documents/UARK/MobileProgramming_fall2021/FinalProject/FinalProject/app/src/main/res/layout/rv_message_item.xml" value="0.1" />
         <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/activity_dashboard.xml" value="0.33" />
         <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/activity_maps.xml" value="0.1328125" />
+        <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/activity_vehicle_profile.xml" value="0.221875" />
+        <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/add_parent.xml" value="0.2890625" />
+        <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/add_vehicle.xml" value="0.221875" />
         <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/child_profile.xml" value="0.1328125" />
         <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/fragment_child_profile_view.xml" value="0.15172101449275363" />
         <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/fragment_first.xml" value="0.1328125" />
         <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/fragment_parent_profile_view.xml" value="0.15172101449275363" />
-        <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/fragment_vehicle_profile_view.xml" value="0.1328125" />
+        <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/fragment_parent_queue.xml" value="0.26197916666666665" />
+        <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/fragment_vehicle_profile_view.xml" value="0.2" />
         <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/parent_profile.xml" value="0.15172101449275363" />
-        <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/rv_child_profile_item.xml" value="0.15172101449275363" />
-        <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/rv_parent_profile_item.xml" value="0.18" />
+        <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/rv_child_profile_item.xml" value="0.25" />
+        <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/rv_parent_profile_item.xml" value="0.25" />
+        <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/rv_review_pickups_item.xml" value="0.26197916666666665" />
         <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/rv_vehicle_profile.xml" value="0.15172101449275363" />
+        <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/rv_vehicle_profile_item.xml" value="0.25" />
         <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/schedule_pickup.xml" value="0.2" />
         <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/vehicle_profile.xml" value="0.1328125" />
+        <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/view_child.xml" value="0.2" />
+        <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/view_parent.xml" value="0.33" />
+        <entry key="..\:/Users/jmont/ChildPickupApp/app/src/main/res/layout/view_vehicle.xml" value="0.25" />
       </map>
     </option>
   </component>

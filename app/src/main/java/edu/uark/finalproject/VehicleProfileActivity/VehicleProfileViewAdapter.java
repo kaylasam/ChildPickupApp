@@ -1,5 +1,7 @@
 package edu.uark.finalproject.VehicleProfileActivity;
 
+import android.content.Intent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -8,6 +10,9 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import edu.uark.finalproject.ParentProfileActivity.ParentProfileViewAdapter;
+import edu.uark.finalproject.ParentProfileActivity.ViewParentActivity;
 import edu.uark.finalproject.R;
 import edu.uark.finalproject.data.Vehicles;
 
@@ -23,14 +28,20 @@ public class VehicleProfileViewAdapter extends RecyclerView.Adapter<VehicleProfi
         localDataSet = vehicles;
     }
 
+    // Create new views (invoked by the layout manager)
     @NonNull
     @Override
-    public VehicleProfileViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+        // Create a new view, which defines the UI of the list item
+        View view = LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.rv_vehicle_profile_item, viewGroup, false);
+
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull VehicleProfileViewAdapter.ViewHolder holder, int position) {
+        holder.itemView.setTag(String.valueOf(localDataSet.get(position).getId()));
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         String vehicleMake = localDataSet.get(position).getMake();
@@ -39,11 +50,23 @@ public class VehicleProfileViewAdapter extends RecyclerView.Adapter<VehicleProfi
         holder.getTvVehicleModel().setText(vehicleModel);
         String vehicleColor = localDataSet.get(position).getColor();
         holder.getTvVehicleColor().setText(vehicleColor);
+
+        //Allow user to click an individual vehicle profile and view information
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Integer vehicleId = Integer.valueOf((String) view.getTag());
+                Intent addvehicle = new Intent();
+                addvehicle.setClass(view.getContext(), ViewVehicleActivity.class);
+                addvehicle.putExtra("vehicle_id", vehicleId);
+                view.getContext().startActivity(addvehicle);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return localDataSet.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

@@ -45,6 +45,16 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
+    <string name="name">Name:</string>
+    <string name="phone">Phone:</string>
+    <string name="email">Email:</string>
+    <string name="age">Age:</string>
+    <string name="grade">Grade:</string>
+
+    <string name="make">Make:</string>
+    <string name="model">Model:</string>
+    <string name="color">Color:</string>
+
     <string name="add_parent">Add Parent</string>
     <string name="add_child">Add Child</string>
     <string name="add_vehicle">Add Vehicle</string>

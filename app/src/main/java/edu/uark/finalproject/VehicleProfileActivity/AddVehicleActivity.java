@@ -17,6 +17,7 @@ import util.AppExecutors;
 
 public class AddVehicleActivity extends AppCompatActivity {
 
+    //Creates objects for repository and vehicle table
     ChildPickupRepository vehicleData;
     Vehicles myVehicle;
 
@@ -29,6 +30,8 @@ public class AddVehicleActivity extends AppCompatActivity {
         Integer vehicleId = callingIntent.getIntExtra("vehicle_id",-1);
         myVehicle = new Vehicles();
         vehicleData = Injection.provideDataRepository(new AppExecutors(),getApplicationContext());
+
+        //If there are no vehicles then add new vehicle otherwise show existing vehicles
         if(vehicleId == -1){
             addNewVehicle();
         }else{
@@ -36,6 +39,7 @@ public class AddVehicleActivity extends AppCompatActivity {
         }
     }
 
+    //Loads existing vehicle
     private void populateExistingVehicle(Integer vehicleId){
         Log.d("AddVehicleActivity","VehicleId= "+vehicleId);
         vehicleData.getVehicle(vehicleId, new ChildPickupDataSource.GetVehiclesCallback() {
@@ -51,6 +55,7 @@ public class AddVehicleActivity extends AppCompatActivity {
         });
     }
 
+    //Adds a new vehicle and stores in database
     private void addNewVehicle(){
         myVehicle = new Vehicles();
         myVehicle.setMake("");
@@ -68,6 +73,7 @@ public class AddVehicleActivity extends AppCompatActivity {
         return;
     }
 
+    //Sets and saves vehicle information from user input when "Add Vehicle" button clicked
     public void onClick(View v){
         myVehicle.setMake(((TextView)findViewById(R.id.avVehicleMake)).getText().toString());
         myVehicle.setModel(((TextView)findViewById(R.id.avVehicleModel)).getText().toString());

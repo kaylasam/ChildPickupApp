@@ -17,26 +17,21 @@ import util.AppExecutors;
 
 public class AddParentActivity extends AppCompatActivity{
 
+    //Creates objects for repository and parent table
     ChildPickupRepository parentData;
     Parents myParent;
-
-    private EditText Name;
-    private EditText Phone;
-    private EditText Email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_parent);
 
-        //Name = findViewById(R.id.apParentName);
-        //Phone = findViewById(R.id.apParentPhoneNumber);
-        //Email = findViewById(R.id.apParentEmail);
-
         Intent callingIntent = this.getIntent();
         Integer parentId = callingIntent.getIntExtra("parent_id",-1);
         myParent = new Parents();
         parentData = Injection.provideDataRepository(new AppExecutors(),getApplicationContext());
+
+        //If there are no parents then add new parent otherwise show existing parents
         if(parentId == -1){
             addNewParent();
         }else{
@@ -44,15 +39,13 @@ public class AddParentActivity extends AppCompatActivity{
         }
     }
 
+    //Loads existing parent
     private void populateExistingParent(Integer parentId){
         Log.d("AddParentActivity","ParentId= "+parentId);
         parentData.getParent(parentId, new ChildPickupDataSource.GetParentCallback() {
             @Override
             public void onParentLoaded(Parents parents) {
                 myParent = parents;
-                //Name.setText(parents.getName());
-                //Phone.setText(parents.getPhone());
-                //Email.setText(parents.getEmail());
             }
 
             @Override
@@ -62,6 +55,7 @@ public class AddParentActivity extends AppCompatActivity{
         });
     }
 
+    //Adds a new parent and stores in database
     private void addNewParent(){
         myParent = new Parents();
         myParent.setName("");
@@ -79,6 +73,7 @@ public class AddParentActivity extends AppCompatActivity{
         return;
     }
 
+    //Sets and saves parent information from user input when "Add Parent" button clicked
     public void onClick(View v){
         myParent.setName(((TextView)findViewById(R.id.apParentName)).getText().toString());
         myParent.setPhone(((TextView)findViewById(R.id.apParentPhoneNumber)).getText().toString());

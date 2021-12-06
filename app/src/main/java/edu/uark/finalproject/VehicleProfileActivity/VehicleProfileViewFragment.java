@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import edu.uark.finalproject.DashboardActivity.DashboardActivity;
+import edu.uark.finalproject.ParentProfileActivity.AddParentActivity;
 import edu.uark.finalproject.ParentProfileActivity.ParentProfileViewAdapter;
 import edu.uark.finalproject.R;
 
@@ -47,6 +48,13 @@ public class VehicleProfileViewFragment extends Fragment implements VehicleProfi
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_vehicle_profile_view, container, false);
         Button button = root.findViewById(R.id.vehicleBackButton);
+        Button addVehicle = root.findViewById(R.id.add_vehicleBTN);
+        addVehicle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPresenter.notifyAddClicked();
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,6 +69,13 @@ public class VehicleProfileViewFragment extends Fragment implements VehicleProfi
     @Override
     public void setPresenter(VehicleProfileContract.Presenter presenter) {
         mPresenter = presenter;
+    }
+
+    @Override
+    public void startAddVehicleActivity() {
+        Intent addVehicleIntent = new Intent();
+        addVehicleIntent.setClass(getActivity(), AddVehicleActivity.class);
+        startActivity(addVehicleIntent);
     }
 
     @Override

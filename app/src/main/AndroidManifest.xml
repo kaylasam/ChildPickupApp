@@ -56,6 +56,15 @@
         <activity
             android:name=".VehicleProfileActivity.VehicleProfileActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".VehicleProfileActivity.AddVehicleActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".VehicleProfileActivity.ViewVehicleActivity"
+            android:exported="true" />
+
         <activity
             android:name=".SchedulePickupActivity.SchedulePickupActivity"
             android:exported="true" />

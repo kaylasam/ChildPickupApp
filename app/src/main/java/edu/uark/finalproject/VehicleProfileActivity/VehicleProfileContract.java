@@ -11,6 +11,7 @@ public interface VehicleProfileContract {
     interface View{
         public void setPresenter(VehicleProfileContract.Presenter presenter);
         public void notifyVehiclesLoaded();
+        public void startAddVehicleActivity();
     }
 
     interface Presenter{
@@ -18,5 +19,6 @@ public interface VehicleProfileContract {
         void setRepository(ChildPickupRepository vehicleData);
         void start();
         public List<Vehicles> getVehicles();
+        public void notifyAddClicked();
     }
 }
