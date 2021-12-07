@@ -22,7 +22,7 @@
                 android:layout_height="85dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="93dp"
-                android:src="@drawable/logo1" />
+                android:src="@drawable/logo3" />
 
         </FrameLayout>
 
@@ -35,7 +35,6 @@
             android:layout_marginRight="62dp"
             android:background="@drawable/blue_border">
 
-            <!-- INPUT -->
             <EditText
                 android:id="@+id/username_input"
                 android:layout_width="match_parent"
@@ -51,7 +50,6 @@
                 android:paddingBottom="15dp"
                 android:textSize="12sp" />
 
-            <!-- ICON -->
             <ImageView
                 android:id="@+id/username_icon"
                 android:layout_width="15dp"
@@ -71,7 +69,6 @@
             android:layout_marginRight="62dp"
             android:background="@drawable/blue_border">
 
-            <!-- INPUT -->
             <EditText
                 android:id="@+id/pass"
                 android:layout_width="match_parent"
@@ -88,7 +85,6 @@
                 android:paddingBottom="15dp"
                 android:textSize="12sp" />
 
-            <!-- ICON -->
             <ImageView
                 android:id="@+id/icon"
                 android:layout_width="14.7dp"
