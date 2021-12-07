@@ -13,9 +13,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BestEmailClient">
+        android:theme="@style/Theme.ChildPickupApp">
         <activity
-            android:name=".DashboardActivity.DashboardActivity"
+            android:name=".LoginActivity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +31,9 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
+        <activity
+            android:name=".DashboardActivity.DashboardActivity"
+            android:exported="true" />
         <activity
             android:name=".ParentProfileActivity.ParentProfileActivity"
             android:exported="true" />

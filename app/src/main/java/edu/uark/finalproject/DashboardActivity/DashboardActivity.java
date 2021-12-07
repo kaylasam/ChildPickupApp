@@ -16,7 +16,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
-    private String TAG = "DashboardActivity";
+    private final String TAG = "DashboardActivity";
     CardView btn_parent_profile, btn_child_profile, btn_vehicle_profile, btn_schedule_pickup,
             btn_map_view, btn_review_pickups;
     CardView cardView;
