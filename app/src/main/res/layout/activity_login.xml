@@ -60,7 +60,6 @@
 
         </RelativeLayout>
 
-
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,26 +103,40 @@
             android:layout_marginTop="18.7dp"
             android:layout_marginRight="62dp"
             android:background="@drawable/dark_purple_fill"
+            android:clickable="true"
+            android:focusable="true"
             android:fontFamily="@font/poppins_medium"
             android:gravity="center"
             android:paddingTop="14dp"
             android:paddingBottom="14dp"
             android:text="Login"
             android:textColor="#ffffff"
-            android:textSize="12sp"
-            android:clickable="true"
-            android:focusable="true" />
+            android:textSize="12sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="14dp"
             android:fontFamily="@font/poppins_medium"
             android:text="Forgot Password?"
+            android:clickable="true"
+            android:focusable="true"
             android:textColor="#1566e0"
             android:textSize="10.5sp" />
 
+        <TextView
+            android:id="@+id/SignUpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Sign up"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="#1566e0"
+            android:textSize="10.5sp" />
 
     </LinearLayout>
 

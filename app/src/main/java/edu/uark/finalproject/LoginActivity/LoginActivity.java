@@ -11,9 +11,10 @@ import android.widget.TextView;
 import edu.uark.finalproject.DashboardActivity.DashboardActivity;
 import edu.uark.finalproject.ParentProfileActivity.ParentProfileActivity;
 import edu.uark.finalproject.R;
+import edu.uark.finalproject.SignupActivity.SignupActivity;
 
 public class LoginActivity extends AppCompatActivity {
-    TextView loginButton;
+    TextView loginButton, signUpButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +25,21 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         loginButton = findViewById(R.id.login);
+        signUpButton = findViewById(R.id.SignUpButton);
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), DashboardActivity.class);
                 startActivity(intent);
-                System.out.println("HELLO LOGIN");
+            }
+        });
+
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), SignupActivity.class);
+                startActivity(intent);
             }
         });
 
