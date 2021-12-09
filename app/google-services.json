@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "356697021273",
+    "firebase_Url": "https://child-pickup-app-default-rtdb.firebaseio.com/",
+    "project_id": "child-pickup-app",
+    "storage_bucket": "child-pickup-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356697021273:android:9eb6acd2cbfd802f0aca48",
+        "android_client_info": {
+          "package_name": "edu.uark.finalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356697021273-7q17pt2etku572gidmdr78s7hc1imvj3.apps.googleusercontent.com",
+          "client_type": 3,
+          "android_info": {
+            "package_name": "edu.uark.finalproject",
+            "certificate_hash": "21:EC:0B:ED:BD:99:E6:1F:81:13:9B:6E:D0:F8:E4:F9:08:27:20:F6"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1nOq3OoZ2-9OnIoRUt6cfPdcY3QuMpLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356697021273-7q17pt2etku572gidmdr78s7hc1imvj3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
