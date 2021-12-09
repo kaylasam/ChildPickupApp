@@ -11,7 +11,6 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import edu.uark.finalproject.ParentProfileActivity.ParentProfileViewAdapter;
 import edu.uark.finalproject.R;
 import edu.uark.finalproject.data.Children;
 
@@ -82,9 +81,9 @@ public class ChildProfileViewAdapter extends RecyclerView.Adapter<ChildProfileVi
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvChildName = (TextView)itemView.findViewById(R.id.tvChildName);
-            tvChildAge = (TextView) itemView.findViewById(R.id.tvChildAge);
-            tvChildGrade = (TextView) itemView.findViewById(R.id.tvChildGrade);
+            tvChildName = itemView.findViewById(R.id.tvChildName);
+            tvChildAge = itemView.findViewById(R.id.tvChildAge);
+            tvChildGrade = itemView.findViewById(R.id.tvChildGrade);
         }
 
         public TextView getTvChildName() {

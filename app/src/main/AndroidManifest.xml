@@ -85,7 +85,7 @@
             android:exported="true" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCZLU56LlQdJGpZT-uqcWT9mMXv1c19sGs" />
+            android:value="AIzaSyCoiqC_qrGO89OqFc2M2OaV-FHOSbY3Rpc" />
 
         <receiver
             android:name=".MapViewActivity.GeofenceBroadcastReceiver"

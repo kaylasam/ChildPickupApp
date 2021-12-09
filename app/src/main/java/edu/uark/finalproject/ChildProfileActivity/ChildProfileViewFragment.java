@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import edu.uark.finalproject.DashboardActivity.DashboardActivity;
-import edu.uark.finalproject.ParentProfileActivity.AddParentActivity;
 import edu.uark.finalproject.R;
 
 public class ChildProfileViewFragment extends Fragment implements ChildProfileContract.View{

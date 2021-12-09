@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import edu.uark.finalproject.DashboardActivity.DashboardActivity;
-import edu.uark.finalproject.ParentProfileActivity.ParentProfileActivity;
 import edu.uark.finalproject.R;
 import edu.uark.finalproject.SignupActivity.SignupActivity;
 
