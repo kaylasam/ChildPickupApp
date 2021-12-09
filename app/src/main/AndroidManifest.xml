@@ -32,6 +32,9 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <activity
+            android:name=".ForgotPasswordActivity.ForgotPasswordActivity"
+            android:exported="true" />
+        <activity
             android:name=".SignupActivity.SignupActivity"
             android:exported="true" />
         <activity
