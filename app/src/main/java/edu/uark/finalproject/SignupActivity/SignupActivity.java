@@ -12,8 +12,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import edu.uark.finalproject.DashboardActivity.DashboardActivity;
 import edu.uark.finalproject.R;
 
 import com.google.firebase.FirebaseApp;
@@ -28,6 +26,10 @@ import java.util.HashMap;
 
 
 public class SignupActivity extends AppCompatActivity {
+    /**
+     * Main class for signup activity. Goes to sign up page and
+     * asks user to enter all information.
+     */
 
     private ImageView parentPic, childPic, vehiclePic;
     private ImageButton backBTN, gpsBTN;

@@ -13,6 +13,12 @@ import edu.uark.finalproject.R;
 import edu.uark.finalproject.SignupActivity.SignupActivity;
 
 public class LoginActivity extends AppCompatActivity {
+    /**
+     * Main class for login activity. This is the first page that
+     * will open when the app is launched. Options for forgot password
+     * and sign up.
+     */
+
     TextView loginButton, forgotPasswordButton, signUpButton;
 
     @Override
@@ -30,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Extend to check for valid credentials
                 Intent intent = new Intent(v.getContext(), DashboardActivity.class);
                 startActivity(intent);
             }

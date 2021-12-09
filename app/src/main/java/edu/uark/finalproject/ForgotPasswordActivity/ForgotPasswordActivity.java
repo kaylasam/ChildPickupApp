@@ -16,6 +16,11 @@ import edu.uark.finalproject.LoginActivity.LoginActivity;
 import edu.uark.finalproject.R;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
+    /**
+     * Main class for forgot password activity. This page will prompt
+     * the user for an email to send a reset password link. Goes back to
+     * login screen afterwards.
+     */
 
     TextView signupButton;
 
