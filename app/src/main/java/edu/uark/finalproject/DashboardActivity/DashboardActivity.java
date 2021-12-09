@@ -26,7 +26,8 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        // Hide the top menu bar
+        getSupportActionBar().hide();
 
         btn_parent_profile = (CardView)findViewById(R.id.ParentProfileCard);
         btn_child_profile = (CardView)findViewById(R.id.ChildProfileCard);
