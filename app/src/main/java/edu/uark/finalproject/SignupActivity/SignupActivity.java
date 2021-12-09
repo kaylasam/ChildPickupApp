@@ -27,7 +27,7 @@ public class SignupActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DashboardActivity.class);
+                Intent intent = new Intent(v.getContext(), SignupActivityAddImages.class);
                 startActivity(intent);
             }
         });
